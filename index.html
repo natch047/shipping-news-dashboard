@@ -14,6 +14,16 @@
     .overview h2 { margin:0 0 12px; color:var(--navy); font-size:21px; }
     .overview-row { display:grid; grid-template-columns:180px 1fr; gap:14px; padding:9px 0; border-top:1px solid #dcebf1; }
     .overview-row:first-of-type { border-top:0; } .overview-row strong { color:#075f80; }
+    .market-index { margin:18px 0; padding:22px 24px; border:1px solid var(--line); border-radius:16px; background:var(--paper); box-shadow:0 5px 18px #102f460d; }
+    .index-heading { display:flex; align-items:start; justify-content:space-between; gap:18px; } .index-heading h2 { margin:0; color:var(--navy); font-size:21px; }
+    .index-heading p,.index-note { margin:3px 0 0; color:var(--muted); font-size:13px; } .index-heading a { font-size:13px; white-space:nowrap; }
+    .index-grid { display:grid; grid-template-columns:220px 1fr; gap:28px; align-items:center; margin-top:18px; }
+    .index-value { padding:17px; border-radius:13px; background:#eef8fb; } .index-value span,.index-value small { display:block; color:var(--muted); }
+    .index-value strong { display:block; margin:2px 0; color:var(--navy); font-size:32px; } .index-value em,.route-label em { font-style:normal; font-size:12px; }
+    .up { color:#b42318; } .down { color:#087b62; } .flat { color:var(--muted); }
+    .route-row { margin:9px 0; } .route-label { display:grid; grid-template-columns:1fr 78px 45px; gap:8px; align-items:center; font-size:13px; }
+    .route-label strong { text-align:right; } .route-label em { text-align:right; } .bar-track { height:7px; margin-top:4px; overflow:hidden; border-radius:999px; background:#e7eef3; }
+    .bar-track span { display:block; height:100%; border-radius:999px; background:linear-gradient(90deg,#087b9f,#35a8c6); }
     .section-title { margin:24px 0 10px; color:var(--navy); font-size:21px; }
     .news-card { margin:13px 0; padding:20px 22px; border:1px solid var(--line); border-radius:15px; background:var(--paper); box-shadow:0 5px 18px #102f460d; }
     .news-top { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
@@ -24,49 +34,179 @@
     .meta { color:var(--muted); font-size:13px; } .summary { margin:10px 0; color:#354354; }
     .impact { padding:10px 12px; border-left:3px solid #1b91b5; color:#344556; background:#f5fafc; }
     footer { margin-top:22px; color:var(--muted); text-align:center; font-size:13px; }
-    @media (max-width:680px) { .overview-row { grid-template-columns:1fr; gap:2px; } main { padding:16px 12px 36px; } }
+    @media (max-width:680px) { .overview-row,.index-grid { grid-template-columns:1fr; gap:10px; } .index-heading { display:block; } main { padding:16px 12px 36px; } }
   </style>
 </head>
 <body><main>
-  <header><h1>航运资讯面板</h1><p>生成时间：2026-08-31 10:00（北京时间） · 收录范围：2026-08-30 10:00 至 2026-08-31 10:00</p></header>
-  <section class="overview"><h2>今日航运资讯小结</h2><div class="overview-row"><strong>重大航运相关地缘时事</strong><span>霍尔木兹海峡商船通行量仍显著低于冲突前水平，扫雷进展尚未带来通航全面恢复，船东、租家与保险人仍需按高风险航区安排航次。</span></div>
-<div class="overview-row"><strong>船公司动态</strong><span>北塞浦路斯至土耳其航线一艘高速客渡船倾覆，造成人员死亡并引发大规模救援，事故原因仍在调查。</span></div></section>
-  <h2 class="section-title">新闻动态 · 5 条</h2>
+  <header><h1>航运资讯面板</h1><p>生成时间：2026-09-01 10:00（北京时间） · 收录范围：2026-08-31 10:00 至 2026-09-01 10:00</p></header>
+  <section class="overview"><h2>今日航运资讯小结</h2><div class="overview-row"><strong>重大航运相关地缘时事</strong><span>霍尔木兹及阿曼附近的袭击、通行争议和伊朗相关军事活动仍使商船采取谨慎航行、等待或替代路线；黑海与红海的军事风险继续影响能源、粮食和集装箱运输。</span></div>
+<div class="overview-row"><strong>运价和市场</strong><span>霍尔木兹低通行量和能源供应扰动继续支撑油轮风险溢价，干散货指数在 8 月 28 日收盘前连续上涨；燃油市场则出现传统船用燃料走弱、生物燃料因原料成本上升而走强的分化。</span></div>
+<div class="overview-row"><strong>船公司动态</strong><span>马士基扩大海陆替代安排并对受影响区域收取应急费用；汽车船和集装箱船公司继续投资导航韧性、超大型船舶和低碳燃料相关资产。</span></div>
+<div class="overview-row"><strong>港口物流</strong><span>巴拿马运河调整大型船舶预约规则，孟加拉国启动深水集装箱码头建设；局部港口事故、台风后积压和危险品绕运仍会造成节点级延误。</span></div>
+<div class="overview-row"><strong>政策法规</strong><span>欧盟继续核查疑似俄罗斯影子船队，IMO 重新推进航运减排方案讨论；制裁、旗国核验、保险限制和危险品合规正共同增加航次审查与运营成本。</span></div>
+<div class="overview-row"><strong>对航运的综合影响</strong><span>当日整体方向仍是通航安全风险偏高、湾区有效运力受限、油轮和相关保险成本上行，替代航线与陆桥推高燃油和港口处理成本；港口扩建和部分低碳投资改善中长期容量，但不能抵消当前战争、制裁、天气和拥堵对航线选择、运价、货量和合规成本的短期压力。</span></div></section>
+  <section class="market-index">
+    <div class="index-heading"><div><h2>Drewry World Container Index</h2><p>周度更新 · 数据日期 2026-08-27</p></div><a href="https://www.drewry.co.uk/supply-chain-advisors/supply-chain-expertise/world-container-index-assessed-by-drewry">查看 Drewry 原始页面</a></div>
+    <div class="index-grid"><div class="index-value"><span>综合指数</span><strong>$4,473</strong><small>美元/40英尺箱</small><em class="down">环比 -1%</em></div><div class="routes"><div class="route-row"><div class="route-label"><span>上海—纽约</span><strong>$9,333</strong><em class="down">-2%</em></div><div class="bar-track"><span style="width:100%"></span></div></div>
+<div class="route-row"><div class="route-label"><span>上海—洛杉矶</span><strong>$6,818</strong><em class="flat">持平</em></div><div class="bar-track"><span style="width:73%"></span></div></div>
+<div class="route-row"><div class="route-label"><span>上海—热那亚</span><strong>$4,866</strong><em class="down">-2%</em></div><div class="bar-track"><span style="width:52%"></span></div></div>
+<div class="route-row"><div class="route-label"><span>上海—鹿特丹</span><strong>$4,287</strong><em class="down">-3%</em></div><div class="bar-track"><span style="width:46%"></span></div></div></div></div>
+    <p class="index-note">Drewry 每周发布一次；每日面板在没有新一期时沿用最近公开值，并持续标明数据日期。图形由本面板根据公开数值绘制。</p>
+  </section>
+  <h2 class="section-title">新闻动态 · 22 条</h2>
   <article class="news-card">
-  <div class="news-top"><span class="number">1</span><span class="category">重大航运相关地缘时事</span><span class="verification">AP全文引用美国中央司令部说明；Axios独立报道交叉核验；属于既有霍尔木兹事件的实质性后续</span></div>
-  <h2><a href="https://apnews.com/article/iran-strait-hormuz-strike-united-states-6b098da673ac3161a266ee459d5eff44">美军打击伊朗海上布雷发射装置</a></h2>
-  <div class="meta">AP / 美国中央司令部 · 2026-08-31 04:01（北京时间）</div>
-  <p class="summary">美国中央司令部称，伊朗革命卫队正准备向霍尔木兹海峡发射携带海雷的火箭，美军因此打击了拉拉克岛上的两套发射装置。这是约一个月来首次对伊军事行动，伊朗随后宣布反击。</p>
-  <div class="impact"><strong>航运影响</strong> 再度布雷风险使霍尔木兹通航恢复更不确定，油轮通行、战争险与燃油成本面临上行压力。</div>
+  <div class="news-top"><span class="number">1</span><span class="category">重大航运相关地缘时事</span><span class="verification">AP报道引用UKMTO通报；高影响安全事实以官方海事通报和独立媒体交叉核验</span></div>
+  <h2><a href="https://apnews.com/article/52b62137e842b9a25612a857368207b6">阿曼附近油轮遭不明物体袭击</a></h2>
+  <div class="meta">AP / UKMTO · 2026-08-31 19:21（北京时间）</div>
+  <p class="summary">英国海事贸易行动办公室报告，一艘油轮在阿曼海岸附近航行时遭三枚不明物体击中。公开报道显示该事件发生在美伊交火和霍尔木兹通行争议持续期间，船舶受损情况仍需以官方后续通报为准。</p>
+  <div class="impact"><strong>航运影响</strong> 商船在霍尔木兹—阿曼湾航段面临更高袭击和等待风险，船东可能增加护航、绕行、战争险和燃油预算。</div>
 </article>
 <article class="news-card">
-  <div class="news-top"><span class="number">2</span><span class="category">重大航运相关地缘时事</span><span class="verification">AP对美国财政部长的直接采访；政策尚属宣布阶段</span></div>
-  <h2><a href="https://apnews.com/article/bessent-interview-iran-sanctions-bank-68d1bb0817c9f83eaa34e9ec643690fa">美国拟扩大对伊金融及石油交易压力</a></h2>
-  <div class="meta">Associated Press · 2026-08-31 05:39（北京时间）</div>
-  <p class="summary">美国财政部长贝森特表示，政府计划本周再制裁一家与伊朗交易有关的银行，并将在G20会议上推动各国配合。他同时称，对中国继续购买伊朗石油所可采取的措施“所有选项都在桌上”。</p>
-  <div class="impact"><strong>航运影响</strong> 制裁扩围可能收紧原油贸易融资、结算、船舶和对手方审查，改变伊朗石油运输路径及对华能源货流。</div>
+  <div class="news-top"><span class="number">2</span><span class="category">重大航运相关地缘时事</span><span class="verification">gCaptain全文转述Reuters并引用航运数据及UKMTO信息；属于霍尔木兹通行的实质性新数字</span></div>
+  <h2><a href="https://gcaptain.com/vessels-crossing-strait-of-hormuz-drop-to-5-per-day/">霍尔木兹商船通行降至每日约五艘</a></h2>
+  <div class="meta">Reuters / gCaptain · 2026-08-31 18:00（北京时间，约）</div>
+  <p class="summary">路透社援引航运数据称，周末霍尔木兹海峡可见的商品船舶通行量降至每日约五艘。报道同时提到一艘油轮在海峡内遭不明物体击中，企业因此继续谨慎安排航行。</p>
+  <div class="impact"><strong>航运影响</strong> 能源船舶有效通行能力骤降，等待、改道和船舶风险定价将推高油轮运价、保险和燃油相关成本。</div>
 </article>
 <article class="news-card">
-  <div class="news-top"><span class="number">3</span><span class="category">重大航运相关地缘时事</span><span class="verification">奥德萨现场报道；引用乌克兰港口协会、农业部和政府官员数据</span></div>
-  <h2><a href="https://www.lemonde.fr/en/international/article/2026/08/28/ukraine-s-black-sea-port-blockade-strangles-grain-exports_6756947_4.html">黑海攻击使乌克兰粮食海运大幅收缩</a></h2>
-  <div class="meta">Le Monde · 2026-08-29 04:21（北京时间，72小时补充窗口）</div>
-  <p class="summary">俄军自7月起加大对乌克兰黑海港口和进出商船的攻击，奥德萨等三大港口的交通已长时间接近停滞。乌农业部称8月初以来出口约50万吨，约为潜在能力的五分之一。</p>
-  <div class="impact"><strong>航运影响</strong> 粮食货流被迫转向多瑙河港口、公路和铁路，推高运输成本、边境拥堵与全球粮食供应风险。</div>
+  <div class="news-top"><span class="number">3</span><span class="category">重大航运相关地缘时事</span><span class="verification">船公司原始客户通告；明确列出订舱限制、替代节点、费用和保险变化</span></div>
+  <h2><a href="https://www.maersk.com/news/articles/2026/08/31/middle-east-operational-update-44">马士基扩大海湾替代运输并暂停部分订舱</a></h2>
+  <div class="meta">Maersk · 2026-08-31（时间未标注）</div>
+  <p class="summary">马士基 8 月 31 日运营通告称，部分保险公司已减少或撤回红海、阿曼湾和波斯湾船舶保险。公司暂停部分受影响国家的特定货类订舱，继续通过萨拉拉、海法肯和吉达等节点安排陆桥或替代运输。</p>
+  <div class="impact"><strong>航运影响</strong> 海运暂停与陆桥转运会增加中转、仓储、卡车和合规协调，客户还需承担每箱应急费用及可能的霍尔木兹附加费。</div>
 </article>
 <article class="news-card">
-  <div class="news-top"><span class="number">4</span><span class="category">重大航运相关地缘时事</span><span class="verification">可读全文；关键数据在文中明确引用UKMTO、美国中央司令部与IMO；仅能按发布日期确认时间窗口</span></div>
-  <h2><a href="https://www.maritimenews.com/iran-conflict-maritime-disruptions/hormuz-shipping-curtailed-iran-conflict">霍尔木兹商船通行仍远低于战前</a></h2>
-  <div class="meta">MaritimeNews.com · 2026-08-30（来源未标注具体时刻）</div>
-  <p class="summary">MaritimeNews 8月30日汇总的航行与官方数据显示，霍尔木兹海峡商业通行仍约比冲突前低90%，过去七天记录到101艘次出境和103艘次入境的完整通行。虽然美方宣布国际认可航道已完成扫雷，但射弹袭击、航线管制与港内滞留船舶仍阻碍通航恢复。</p>
-  <div class="impact"><strong>航运影响</strong> 海峡有效运力与湾区能源运输仍受限，油轮和散货船调度、保险及合规成本难以迅速回归常态。</div>
+  <div class="news-top"><span class="number">4</span><span class="category">重大航运相关地缘时事</span><span class="verification">AP报道阿联酋官方说法，并与同期美伊军事行动报道相互核验</span></div>
+  <h2><a href="https://apnews.com/article/9f34873bad9a928574c36ee984c3f96b">美阿联酋通报伊朗无人机被拦截</a></h2>
+  <div class="meta">Associated Press · 2026-08-31 14:47（北京时间）</div>
+  <p class="summary">阿联酋称在其领海上空拦截一架伊朗无人机。事件发生在美伊交换火力、美国打击伊朗海雷发射设施之后，地区军事态势仍处于高波动状态。</p>
+  <div class="impact"><strong>航运影响</strong> 领空和海域警戒升级会增加湾区船舶航行通告、港口安保和船员风险评估，延续商船避险与保险成本压力。</div>
 </article>
 <article class="news-card">
-  <div class="news-top"><span class="number">5</span><span class="category">船公司动态</span><span class="verification">gCaptain完整转载Bloomberg报道，并引用塞浦路斯土耳其族领导人及官员消息；页面相对时间可确认属于本次窗口</span></div>
-  <h2><a href="https://gcaptain.com/at-least-six-people-dead-in-northern-cyprus-ferry-capsizing/">北塞浦路斯高速客渡船倾覆</a></h2>
-  <div class="meta">gCaptain / Bloomberg · 2026-08-30（页面显示约15小时前发布）</div>
-  <p class="summary">一艘载有约259名乘客和8名船员的Filojet高速客渡船，从北塞浦路斯凯利尼亚驶往土耳其塔西久时在离岸约6.5公里处进水倾覆。截至报道发布时至少6人死亡、172人获救，海岸警卫队船艇和救援直升机参与搜救，进水原因尚未确定。</p>
-  <div class="impact"><strong>航运影响</strong> 事故可能引发该区域高速客渡船安全检查、航线调整及救生和维修程序复核。</div>
+  <div class="news-top"><span class="number">5</span><span class="category">重大航运相关地缘时事</span><span class="verification">报道引用也门政府军发布的视频和行动说法；对后续航线影响仅作条件性表述</span></div>
+  <h2><a href="https://maritime-executive.com/article/houthi-s-unmanned-attack-boat-base-destroyed-by-yemeni-forces">也门政府军摧毁胡塞无人攻击艇基地</a></h2>
+  <div class="meta">The Maritime Executive · 2026-08-31 02:06（北京时间）</div>
+  <p class="summary">也门国际承认政府一方称，在红海沿岸摧毁一处胡塞无人攻击艇基地及一艘 Tufan-1 无人艇。报道还回顾该型号曾用于攻击商船，但未称本次行动造成新的商船损失。</p>
+  <div class="impact"><strong>航运影响</strong> 若相关攻击艇能力被削弱，曼德海峡局部袭击风险可能下降；但红海航线恢复仍取决于持续验证的安全和保险条件。</div>
 </article>
-  <footer>本页面仅保存在本机。标题与摘要经过中性化整理，请以所附原始来源为准。</footer>
+<article class="news-card">
+  <div class="news-top"><span class="number">6</span><span class="category">重大航运相关地缘时事</span><span class="verification">报道引用土耳其媒体及海岸警卫队处置信息；与黑海商船遇袭背景报道交叉核验</span></div>
+  <h2><a href="https://maritime-executive.com/article/video-two-abandoned-vessels-attacked-in-black-sea-wash-ashore-in-turkey">俄乌黑海冲突促使商船避开港口水域</a></h2>
+  <div class="meta">The Maritime Executive · 2026-08-31 21:57（北京时间）</div>
+  <p class="summary">报道显示，两艘在黑海冲突中受影响的商船漂至土耳其海岸，其中一艘为产品 tanker。此前船舶在靠近黑海港口航行时受到攻击或失去控制，土耳其海岸警卫队介入处置。</p>
+  <div class="impact"><strong>航运影响</strong> 商船受损和漂移事件增加黑海港口靠泊、船舶安全评估及战争险成本，粮食和能源货流可能继续转向替代港口与陆路。</div>
+</article>
+<article class="news-card">
+  <div class="news-top"><span class="number">7</span><span class="category">重大航运相关地缘时事</span><span class="verification">报道引用英国皇家海军说明；船舶制裁状态和航行信息按报道内容呈现</span></div>
+  <h2><a href="https://maritime-executive.com/article/royal-navy-describes-intense-72-hour-operation-tracking-russian-vessels">英国海军跟踪俄方护航船队穿越英吉利海峡</a></h2>
+  <div class="meta">Royal Navy / The Maritime Executive · 2026-08-31 00:58（北京时间）</div>
+  <p class="summary">英国海军披露，四艘军舰在 72 小时行动中跟踪由俄军舰护航、经过英国水域的货船和油轮。英国称相关货船属于俄罗斯影子船队并已受制裁，俄方船队继续向地中海方向航行。</p>
+  <div class="impact"><strong>航运影响</strong> 影子船队改道和护航增加航程、等待和被查验风险，俄罗斯能源海运的合规、保险和港口准入成本上升。</div>
+</article>
+<article class="news-card">
+  <div class="news-top"><span class="number">8</span><span class="category">重大航运相关地缘时事</span><span class="verification">报道引用欧盟高级代表及EUNAVFOR IRINI行动信息，并参考Equasis船舶资料</span></div>
+  <h2><a href="https://maritime-executive.com/article/eu-forces-stop-sixth-tanker-in-the-mediterranean-for-inspection">欧盟地中海行动检查第六艘可疑油轮</a></h2>
+  <div class="meta">EU / The Maritime Executive · 2026-08-31 20:23（北京时间）</div>
+  <p class="summary">欧盟海军行动部队在地中海拦停一艘疑似使用虚假旗帜、服务于俄罗斯石油影子船队的油轮进行旗国核验。欧盟外交与安全政策负责人称，这是该行动今年扩大授权后检查的第六艘油轮。</p>
+  <div class="impact"><strong>航运影响</strong> 旗国核验和影子船队执法会增加受制裁油品运输的查验、扣留、改旗和保险合规成本，并提高相关航次延误概率。</div>
+</article>
+<article class="news-card">
+  <div class="news-top"><span class="number">9</span><span class="category">运价和市场</span><span class="verification">市场报告列出Baltic Exchange 8月28日收盘数据；数值和变化幅度可在原文核对</span></div>
+  <h2><a href="https://www.marcenta.co.uk/market-sentinel-seven-sessions-higher-capesize-leads-the-bdi-to-a-three-month-high-as-bunkers-firm/">干散货指数连续第七个交易日上涨</a></h2>
+  <div class="meta">Baltic Exchange / Marcenta · 2026-08-30 08:00（北京时间，补充窗口）</div>
+  <p class="summary">市场报告称，Baltic Dry Index 在 8 月 28 日上涨 2.5% 至 3,186 点，周内上涨 12.1%，Capesize 是主要推动力量，Panamax 和 Handysize 也同步改善。燃油价格同期偏强，船东收益需扣除更高的航次燃料成本。</p>
+  <div class="impact"><strong>航运影响</strong> 干散货即期运价和租船议价能力改善，但燃油上涨会抵消部分 TCE 增长，并抬高矿石、煤炭和粮食运输成本。</div>
+</article>
+<article class="news-card">
+  <div class="news-top"><span class="number">10</span><span class="category">运价和市场</span><span class="verification">报道引用Prima Markets评估；只采用原文列出的价格方向和原料成本解释</span></div>
+  <h2><a href="https://maritimegazette.com/article/costly-feedstock-lifts-rotterdam-bio-bunker-prices-despite-conventional-vlsfo-drop-1890121">鹿特丹生物船燃料价格逆势上升</a></h2>
+  <div class="meta">Prima Markets / Maritime Gazette · 2026-08-31（时间未标注）</div>
+  <p class="summary">市场评估显示，鹿特丹区域 B30-VLSFO 生物燃料和 UCOME 价格在截至 8 月 30 日的一周上涨，而传统 VLSFO 下跌。报告将差异归因于生物燃料原料成本与传统燃油市场驱动因素不同。</p>
+  <div class="impact"><strong>航运影响</strong> 采用替代燃料的船舶面临更高的燃料采购成本和燃料切换决策复杂度，船公司可能重新计算绿色燃料附加费与航线经济性。</div>
+</article>
+<article class="news-card">
+  <div class="news-top"><span class="number">11</span><span class="category">船公司动态</span><span class="verification">报道标明为公司企业新闻，引用合同年限、船队规模和技术用途</span></div>
+  <h2><a href="https://maritime-executive.com/article/hoegh-autoliners-to-equip-entire-fleet-with-new-navigation-resilience-techn">赫伯罗特签约提升整船队导航抗干扰能力</a></h2>
+  <div class="meta">H&#246;egh Autoliners / The Maritime Executive · 2026-08-31（时间未标注）</div>
+  <p class="summary">H&#246;egh Autoliners 与 SGM Technology 签署五年合同，将为现有 38 艘汽车船及未来新造船配备 PntGuard 导航韧性技术。公司称方案用于应对 GPS 干扰、欺骗和定位不稳定。</p>
+  <div class="impact"><strong>航运影响</strong> 导航抗干扰能力提升可降低受干扰海域的误航和延误风险，并增加船舶改造、设备维护与合规培训投入。</div>
+</article>
+<article class="news-card">
+  <div class="news-top"><span class="number">12</span><span class="category">船公司动态</span><span class="verification">来源页面列出命名事件和船型；未扩展原文未披露的交付时间或航线信息</span></div>
+  <h2><a href="https://themarinetimes.com/">OOCL 命名第二艘甲醇双燃料超大型集装箱船</a></h2>
+  <div class="meta">The Marine Times · 2026-08-31（时间未标注）</div>
+  <p class="summary">OOCL 为一艘约 24,000 TEU 的甲醇双燃料集装箱船举行命名活动，该船属于七艘系列船。该系列将增加公司在超大型船舶和替代燃料船队上的投入。</p>
+  <div class="impact"><strong>航运影响</strong> 新船交付将扩充远洋主干航线的低碳运力，同时可能加剧大型船舶供给对航线配载、港口吃水和班期网络的要求。</div>
+</article>
+<article class="news-card">
+  <div class="news-top"><span class="number">13</span><span class="category">港口物流</span><span class="verification">报道引用巴拿马运河管理局公告及规则生效日期</span></div>
+  <h2><a href="https://maritime-executive.com/article/panama-canal-adjusts-booking-system-to-ensure-equitable-slot-access">巴拿马运河调整大型船舶预约规则</a></h2>
+  <div class="meta">Panama Canal Authority / The Maritime Executive · 2026-08-30 20:04（北京时间，补充窗口）</div>
+  <p class="summary">巴拿马运河管理局宣布即时调整 Neopanamax 船舶预约安排，包括允许同一运营方在相邻日期取得多个预约，并提高预约灵活性。新规则适用于 9 月 13 日起的预约，背景是干旱条件下可用槽位和竞价价格压力。</p>
+  <div class="impact"><strong>航运影响</strong> 规则可改善大型船舶槽位规划的确定性，但可用槽位受限仍可能增加等待、竞价和替代航线成本。</div>
+</article>
+<article class="news-card">
+  <div class="news-top"><span class="number">14</span><span class="category">港口物流</span><span class="verification">报道列出投资额、经营期限、设计吃水和容量等项目事实</span></div>
+  <h2><a href="https://maritime-executive.com/article/construction-starts-on-bangladesh-terminal-to-double-ship-size-and-capacity">孟加拉国启动深水集装箱码头建设</a></h2>
+  <div class="meta">APM Terminals / The Maritime Executive · 2026-09-01 02:13（北京时间）</div>
+  <p class="summary">孟加拉国吉大港举行 Laldia 集装箱码头开工仪式，项目由 APM Terminals 与当地合作方投资建设。项目计划把可处理船型从约 2,800 TEU 提高至 6,000 TEU，并新增约 800,000 TEU 年容量。</p>
+  <div class="impact"><strong>航运影响</strong> 中长期将减少孟加拉国对科伦坡、新加坡等枢纽中转的依赖，扩大直靠船型和出口货量承载能力；建设期影响有限。</div>
+</article>
+<article class="news-card">
+  <div class="news-top"><span class="number">15</span><span class="category">港口物流</span><span class="verification">报道列明事故地点、货船和伤情；未对港口整体运营作扩大推断</span></div>
+  <h2><a href="https://maritime-executive.com/article/crane-lifting-accident-starts-fire-and-injures-two-in-mumbai">孟买港起重作业事故造成两人受伤</a></h2>
+  <div class="meta">The Maritime Executive · 2026-08-31 23:14（北京时间）</div>
+  <p class="summary">孟买港一艘散货船靠泊作业期间，卡车起重机疑因起吊不稳定倾倒并引发火灾，两名起重机操作员受伤。事故发生在货物作业环节，港口后续处置和安全调查仍在进行。</p>
+  <div class="impact"><strong>航运影响</strong> 局部泊位可能暂停或放慢装卸，造成船舶作业延误，并促使港口复核起重设备、作业许可和船岸协同程序。</div>
+</article>
+<article class="news-card">
+  <div class="news-top"><span class="number">16</span><span class="category">港口物流</span><span class="verification">报道以MAIB调查结果为核心，列出船舶、人数、损坏和调查原因</span></div>
+  <h2><a href="https://maritime-executive.com/article/maib-reports-on-ferry-jetty-incident-that-holed-hull-and-caused-flooding">英国渡轮事故调查指向船岸协同问题</a></h2>
+  <div class="meta">UK MAIB / The Maritime Executive · 2026-09-01 01:00（北京时间）</div>
+  <p class="summary">英国海事事故调查处发布对 Stena Estrid 渡轮在 Holyhead 靠泊时撞击码头的调查结果，事故造成船体破损并约有 500 吨海水进入机舱和邻近舱室。调查指出拖轮位置、通信冲突、风况和码头护舷结构共同增加了碰撞后果。</p>
+  <div class="impact"><strong>航运影响</strong> 调查建议将推动渡轮码头护舷、拖轮协同和靠泊程序改进，短期可能带来泊位维护和运营限制。</div>
+</article>
+<article class="news-card">
+  <div class="news-top"><span class="number">17</span><span class="category">政策法规</span><span class="verification">TradeWinds报道会议进程并引用行业参与者；对未决方案使用条件性表述</span></div>
+  <h2><a href="https://www.tradewindsnews.com/regulation/four-challengers-one-climate-deal-imo-talks-resume/2-1-2028649">IMO 继续讨论航运减排方案</a></h2>
+  <div class="meta">IMO / TradeWinds · 2026-08-31 22:28（北京时间）</div>
+  <p class="summary">IMO 相关谈判在伦敦恢复，行业围绕航运脱碳方案、清洁燃料激励和实施路径继续分歧与协调。报道提到中国等成员对推动清洁燃料供应链表达关注，但最终制度安排尚未确定。</p>
+  <div class="impact"><strong>航运影响</strong> 若形成全球性燃料标准或价格机制，船队更新、燃料采购、航速和航线成本将受到影响；在方案落地前，投资和合规方向仍存在不确定性。</div>
+</article>
+<article class="news-card">
+  <div class="news-top"><span class="number">18</span><span class="category">政策法规</span><span class="verification">船公司通知页面列出取消扫描费及生效日期</span></div>
+  <h2><a href="https://www.totemaritime.com/notifications/">TOTE 取消波多黎各港口货物扫描费</a></h2>
+  <div class="meta">TOTE Maritime Puerto Rico · 2026-09-01（时间未标注）</div>
+  <p class="summary">TOTE Maritime Puerto Rico 表示，波多黎各港务局取消货物扫描要求后，公司自 8 月 28 日起移除相应扫描费。该变化影响的是相关航线的收费项目，而非船舶安全或港口整体关闭。</p>
+  <div class="impact"><strong>航运影响</strong> 相关货主的单票港口附加成本小幅下降，收费简化也有助于减少结算争议，但对总体运力和班期影响有限。</div>
+</article>
+<article class="news-card">
+  <div class="news-top"><span class="number">19</span><span class="category">船公司动态</span><span class="verification">TradeWinds 8月28日公开归档列出多项租船、船舶买卖和市场报道；本条仅概括共同运营影响</span></div>
+  <h2><a href="https://www.tradewindsnews.com/archive/?hits=100&amp;languages=en&amp;q=">航运市场波动推动船东增加长期租船安排</a></h2>
+  <div class="meta">TradeWinds · 2026-08-28（补充窗口）</div>
+  <p class="summary">航运市场报道显示，油轮和干散货船东在高波动和区域冲突背景下继续锁定中长期租船合同；同期部分船东出售或调整老旧船舶资产。公开市场信息反映的是企业经营选择，不等同于全行业需求预测。</p>
+  <div class="impact"><strong>航运影响</strong> 长期租船可提高船东现金流可见性，却可能减少市场现货运力，使突发航线扰动下的可调度船舶更紧张。</div>
+</article>
+<article class="news-card">
+  <div class="news-top"><span class="number">20</span><span class="category">重大航运相关地缘时事</span><span class="verification">页面明确标注转述Reuters，并列出铁路订舱和港口货流数据；属于黑海货流的后续变化</span></div>
+  <h2><a href="https://meduza.io/amp/en/news/2026/09/01/reuters-ukrainian-attacks-are-pushing-russian-grain-out-of-the-black-sea-and-into-the-baltic">黑海攻击促使俄罗斯粮食货流考虑转向波罗的海</a></h2>
+  <div class="meta">Reuters / Meduza · 2026-09-01 08:00（北京时间，补充窗口）</div>
+  <p class="summary">路透社报道，俄乌对船舶和港口基础设施的攻击使俄罗斯部分粮食出口商考虑把货物从黑海和亚速海改经波罗的海。报道引用行业人士称，波罗的海港口铁路订舱需求已明显增加。</p>
+  <div class="impact"><strong>航运影响</strong> 粮食货流改道会增加铁路接驳、港口换装和海运航程，分散黑海港口吞吐并推高区域物流与保险成本。</div>
+</article>
+<article class="news-card">
+  <div class="news-top"><span class="number">21</span><span class="category">运价和市场</span><span class="verification">市场分析列明船舶通行、油品价格和LNG影响；与本次窗口内通行量及运营通告相互核验</span></div>
+  <h2><a href="https://www.spglobal.com/energy/en/news-research/latest-news/crude-oil/082826-us-iran-war-six-months-on-tanker-rates-fuel-prices-surge-amid-disruptions">霍尔木兹中断继续推高油轮和燃料市场风险溢价</a></h2>
+  <div class="meta">S&amp;P Global · 2026-08-28（补充窗口）</div>
+  <p class="summary">S&amp;P Global 8 月 28 日市场分析称，霍尔木兹航运中断使油轮运价达到高位，并收紧成品油市场；其船舶追踪数据称，海峡船舶通行较冲突前下降超过 80%。报告同时指出卡塔尔 LNG 出口能力受到持续影响。</p>
+  <div class="impact"><strong>航运影响</strong> 能源船舶绕航和供给受限会推高油轮运价、燃油采购和能源进口成本，并通过燃油附加费传导至集装箱和散货航线。</div>
+</article>
+<article class="news-card">
+  <div class="news-top"><span class="number">22</span><span class="category">港口物流</span><span class="verification">报道引用Hapag-Lloyd运营更新并列出上海、宁波等待时间与停港安排</span></div>
+  <h2><a href="https://en.portnews.ru/news/print/396102/">台风和积压继续推高东亚港口拥堵</a></h2>
+  <div class="meta">Hapag-Lloyd / PortNews · 2026-08-28（补充窗口）</div>
+  <p class="summary">航运行业报道援引班轮公司和港口数据称，台风天气造成宁波—舟山等港口短时关闭，上海洋山部分船舶等待时间达到数日。港口恢复后仍需消化锚地和堆场积压，班期恢复速度慢于复港速度。</p>
+  <div class="impact"><strong>航运影响</strong> 天气冲击会减少有效船舶和设备周转，造成跳港、延误、空班和陆侧堆场压力，并可能短期支撑区域集装箱运价。</div>
+</article>
+  <footer>标题、摘要与指数图形经过整理，请以所附原始来源为准。</footer>
 </main></body></html>
-
