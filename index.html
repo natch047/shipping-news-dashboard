@@ -35,331 +35,226 @@
     .impact { padding:10px 12px; border-left:3px solid #1b91b5; color:#344556; background:#f5fafc; }
     footer { margin-top:22px; color:var(--muted); text-align:center; font-size:13px; }
     .market-outlook { margin-top:22px; padding-top:20px; border-top:2px solid #bcd9e5; }
-    .outlook-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
-    .outlook-card { padding:16px; background:white; border:1px solid var(--line); border-radius:12px; overflow-wrap:anywhere; }
-    .outlook-card h3 { margin:0 0 10px; color:var(--navy); } .outlook-card h4 { margin:10px 0 6px; }
-    .outlook-card p { margin:6px 0; font-size:14px; } .outlook-card small { margin-left:8px; color:var(--muted); font-weight:normal; }
-    .outlook-badge { padding:2px 7px; border-radius:6px; color:#075f80; background:#e9f6fa; font-size:13px; }
-    .outlook-analysis + .outlook-analysis { border-top:1px solid var(--line); margin-top:12px; }
-    .outlook-card details { font-size:12px; color:var(--muted); } .outlook-card summary { cursor:pointer; color:#075f80; }
-    .outlook-card ul { padding-left:18px; } .outlook-region { padding-top:10px; border-top:1px solid var(--line); }
+    .outlook-list { display:grid; gap:6px; }
+    .outlook-card { background:white; border:1px solid var(--line); border-radius:8px; overflow-wrap:anywhere; }
+    .outlook-line { padding:9px 12px; font-size:14px; line-height:1.5; }
+    summary.outlook-line { display:list-item; cursor:pointer; }
+    .outlook-name { display:inline-block; min-width:130px; font-weight:600; color:var(--navy); }
+    .outlook-badge { padding:2px 7px; margin-right:8px; border-radius:6px; color:#075f80; background:#e9f6fa; font-size:13px; white-space:nowrap; }
+    .outlook-signal { display:inline-block; max-width:45%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; vertical-align:bottom; }
+    .outlook-line small { margin-left:10px; color:var(--muted); white-space:nowrap; }
+    .outlook-analysis,.outlook-region { padding:0 14px 10px; font-size:14px; }
+    .outlook-analysis p { margin:6px 0; }
+    .outlook-analysis details { font-size:12px; }
+    .market-outlook summary { cursor:pointer; }
+    .outlook-segment { margin:6px 12px; border-top:1px solid var(--line); }
+    .outlook-region { margin:8px 0 0; color:var(--muted); }
+    .outlook-older { margin-top:10px; font-size:14px; }
+    .outlook-older > .outlook-list { margin-top:8px; }
+    .outlook-heading { font-size:15px; margin:10px 0 6px; }
+    .outlook-market-summary { font-size:14px; line-height:1.6; }
+    @media (max-width:680px) { .outlook-name { min-width:0; margin-right:8px; } .outlook-signal { display:block; max-width:100%; } .outlook-line small { display:none; } .outlook-line { position:relative; padding-bottom:26px; } .outlook-line small { display:block; position:absolute; bottom:5px; right:12px; font-size:10px; } }
     @media (max-width:680px) { .overview-row,.index-grid,.outlook-grid { grid-template-columns:1fr; gap:10px; } .overview { padding:16px; } .index-heading { display:block; } main { padding:16px 12px 36px; } }
   </style>
 </head>
 <body><main>
-  <header><h1>航运资讯面板</h1><p>生成时间：2026-10-21 10:00:00 +08:00 · 收录范围：2026-10-20 10:00:00 +08:00 至 2026-10-21 10:00:00 +08:00</p></header>
-  <section class="overview"><h2>今日航运资讯小结</h2><div class="overview-row"><strong>重大航运相关地缘时事</strong><span>黑海10天内发生6次疑似俄方无人机袭击，欧盟称两艘油轮遇袭后仍有7名海员失踪；霍尔木兹10月上半月至少记录23起船舶袭击，其中至少5起波及机舱。与此同时，苏伊士复航继续推进，但霍尔木兹、曼德海峡和黑海仍构成三处并行风险点。</span></div>
-<div class="overview-row"><strong>运价和市场</strong><span>Drewry WCI截至10月15日周涨3%至4485美元/40英尺箱，上海至鹿特丹、热那亚和洛杉矶上涨，上海至纽约小幅回落。Freightos数据亦显示欧地线短期反弹，但苏伊士复航释放有效运力，涨价持续性仍受质疑。</span></div>
-<div class="overview-row"><strong>船公司动态</strong><span>马士基与赫伯罗特继续重组Gemini苏伊士网络，并把几乎全面回归苏伊士的目标指向2027年一季度。HMM、MSC、GCC、海安及多家船东继续扩充箱船、滚装船和气体船订单，全球箱船订单簿升至现有船队的46.5%，中期运力压力进一步累积。</span></div>
-<div class="overview-row"><strong>港口物流</strong><span>马尼拉空箱失衡预计需数月消化，特马港出现卡车、账单和提箱延误，北欧港口则警惕苏伊士与好望角船舶叠加到港。安特卫普—布鲁日第三季度箱量恢复，但增长主要来自空箱；卡萨布兰卡新增两台岸桥，越南Dung Quat碰撞事故触发更严格拖轮值守要求。</span></div>
-<div class="overview-row"><strong>政策法规</strong><span>美国暂时豁免对俄罗斯能源买家最高100%关税，但保留后续启用机制；FMC拟对西班牙旗船收费并限制部分西班牙货物。IMO通过东北大西洋排放控制区及塑料颗粒、压载水相关工作，上海同时发布水运人工智能、内河新能源船和绿色燃料认证等成果。</span></div>
-<div class="overview-row"><strong>对航运的综合影响</strong><span>当日航运呈现“安全风险高位、短期运价反弹、有效运力回升”的并存格局：三大风险水域继续推高保险、船员与吨位成本；苏伊士复航和庞大订单簿又增加中期供给压力。港口端的空箱错配和到港叠加可能抵消部分航程缩短收益；货主应按航线区分报价走势，缩短有效期，并逐票核对通航、附加费、舱位和内陆衔接。</span></div><section class="market-outlook"><h2>未来 1–2 周市场与航线运价预判</h2>
-<p class="meta">判断日期：2026-10-21 · 预判区间：2026-10-21 至 2026-11-04</p>
-<p>未来1至2周中国出口集装箱即期市场预计继续分化：北美两岸和欧地线指数信号不一致，苏伊士复航增加有效运力，而霍尔木兹、红海风险及西非拥堵附加费继续抬高局部成本。缺少直接成交证据的航线保持信息不足；第二周判断确定性低于第一周。</p>
-<p class="meta">中国出口集装箱即期海运市场 · 方向为分析判断，非具体报价。按业务口径：墨西哥属拉美，土耳其属欧洲，摩洛哥属地中海。</p>
-<div class="outlook-grid"><article class="outlook-card"><h3>中东红海</h3><div class="outlook-analysis"><h4>总体 <span class="outlook-badge">信息不足</span><small>信心：不评级</small></h4>
-<p><strong>分析判断</strong> 霍尔木兹袭击加剧而苏伊士复航扩大，安全成本和有效运力方向相反，且缺少中国出口直接成交价。</p>
-<p><strong>变化条件</strong> 霍尔木兹通行量、商船袭击、战争险、红海护航与承运人临时绕航决定。</p>
-<p><strong>操作建议</strong> 逐票确认可接货港、中转路径、战争险和报价有效期，交期敏感货保留绕航备选。</p>
-<details><summary>已核验事实与来源</summary><ul><li><a href="https://www.worldports.org/iran-strikes-more-ship-engine-rooms-in-ramp-up-of-hormuz-attacks/">World Ports Organization / Bloomberg</a> · 数据/发布日期 2026-10-20：10月上半月霍尔木兹附近至少23起船舶袭击，至少5起波及机舱。</li><li><a href="https://www.worldports.org/maersk-targets-full-suez-canal-return-by-march-2027/">Suez Canal Authority经World Ports Organization</a> · 数据/发布日期 2026-10-20：马士基计划在局势稳定前提下于2027年3月前使全部服务回归苏伊士。</li></ul></details></div><p class="outlook-region"><strong>起运区域差异</strong> 未取得华南、华北、华东和长江至中东红海的同口径即期成交；内陆段另行核算。</p></article>
-<article class="outlook-card"><h3>印巴</h3><div class="outlook-analysis"><h4>总体 <span class="outlook-badge">信息不足</span><small>信心：不评级</small></h4>
-<p><strong>分析判断</strong> 取得的是Gemini经科伦坡连接南亚的网络调整，不能直接证明中国至印度或巴基斯坦即期价格方向。</p>
-<p><strong>变化条件</strong> 中国主要起运港至印度、巴基斯坦近期成交、舱位和附加费。</p>
-<p><strong>操作建议</strong> 印度与巴基斯坦分别询价，确认转运港和报价有效期。</p>
-</div>
-<div class="outlook-analysis"><h4>印度 <span class="outlook-badge">信息不足</span><small>信心：不评级</small></h4>
-<p><strong>分析判断</strong> 缺少直接成交证据。</p>
-<p><strong>变化条件</strong> 取得近期成交与舱位。</p>
-<p><strong>操作建议</strong> 逐票核价并确认科伦坡中转。</p>
-</div>
-<div class="outlook-analysis"><h4>巴基斯坦 <span class="outlook-badge">信息不足</span><small>信心：不评级</small></h4>
-<p><strong>分析判断</strong> 缺少直接成交证据。</p>
-<p><strong>变化条件</strong> 取得近期成交与舱位。</p>
-<p><strong>操作建议</strong> 逐票核价并确认中转路径。</p>
-</div><p class="outlook-region"><strong>起运区域差异</strong> 没有四大起运区域的可比直接价格。</p></article>
-<article class="outlook-card"><h3>东南亚和东北亚</h3><div class="outlook-analysis"><h4>总体 <span class="outlook-badge">信息不足</span><small>信心：不评级</small></h4>
-<p><strong>分析判断</strong> 马尼拉拥堵反映局部空箱与堆场压力，但不足以推断中国出口至整个东南亚或东北亚的统一价格方向。</p>
-<p><strong>变化条件</strong> 马尼拉空箱清运、区域班次与中国主要起运港近期成交。</p>
-<p><strong>操作建议</strong> 按目的港逐票询价，菲律宾货额外确认免箱期和空箱回运。</p>
-</div>
-<div class="outlook-analysis"><h4>东南亚 <span class="outlook-badge">信息不足</span><small>信心：不评级</small></h4>
-<p><strong>分析判断</strong> 仅有局部港口拥堵证据。</p>
-<p><strong>变化条件</strong> 取得分航线成交与舱位。</p>
-<p><strong>操作建议</strong> 逐港核价。</p>
-</div>
-<div class="outlook-analysis"><h4>东北亚 <span class="outlook-badge">信息不足</span><small>信心：不评级</small></h4>
-<p><strong>分析判断</strong> 缺少日韩方向直接价格。</p>
-<p><strong>变化条件</strong> 取得分航线成交。</p>
-<p><strong>操作建议</strong> 逐港核价。</p>
-</div><p class="outlook-region"><strong>起运区域差异</strong> 没有华南、华北、华东和长江的同口径可比价格。</p></article>
-<article class="outlook-card"><h3>澳洲和新西兰</h3><div class="outlook-analysis"><h4>总体 <span class="outlook-badge">信息不足</span><small>信心：不评级</small></h4>
-<p><strong>分析判断</strong> 本次未取得中国出口至澳新同期可比成交或直接运力公告。</p>
-<p><strong>变化条件</strong> 承运人班次、设备和近期成交变化。</p>
-<p><strong>操作建议</strong> 澳洲和新西兰分别询价，跨公告生效日复核。</p>
-</div>
-<div class="outlook-analysis"><h4>澳洲 <span class="outlook-badge">信息不足</span><small>信心：不评级</small></h4>
-<p><strong>分析判断</strong> 缺少直接证据。</p>
-<p><strong>变化条件</strong> 取得近期成交。</p>
-<p><strong>操作建议</strong> 逐港核价。</p>
-</div>
-<div class="outlook-analysis"><h4>新西兰 <span class="outlook-badge">信息不足</span><small>信心：不评级</small></h4>
-<p><strong>分析判断</strong> 缺少直接证据。</p>
-<p><strong>变化条件</strong> 取得近期成交。</p>
-<p><strong>操作建议</strong> 逐港核价。</p>
-</div><p class="outlook-region"><strong>起运区域差异</strong> 没有四大起运区域可比数据。</p></article>
-<article class="outlook-card"><h3>非洲</h3><div class="outlook-analysis"><h4>总体 <span class="outlook-badge">偏涨</span><small>信心：低</small></h4>
-<p><strong>分析判断</strong> CMA CGM对特马、弗里敦和蒙罗维亚宣布拥堵附加费，直接抬高远东出口到西非的报价成本，但不能代表东非、南非或基础海运费全面上涨。</p>
-<p><strong>变化条件</strong> 三港拥堵缓解、附加费撤销或其他承运人跟进。</p>
-<p><strong>操作建议</strong> 西非货跨11月1日开航需复核附加费；东非、南非继续单独询价。</p>
-<details><summary>已核验事实与来源</summary><ul><li><a href="https://container-news.com/cma-cgm-announces-new-congestion-charges-for-tema-freetown-and-monrovia/">CMA CGM经Container News</a> · 数据/发布日期 2026-10-20：11月1日起远东至特马征收200美元/TEU，至弗里敦与蒙罗维亚最高700美元/TEU。</li></ul></details></div><p class="outlook-region"><strong>起运区域差异</strong> 公告适用于远东起运但未给出中国四大区域差异；内陆与中转成本另计。</p></article>
-<article class="outlook-card"><h3>欧洲和地中海</h3><div class="outlook-analysis"><h4>总体 <span class="outlook-badge">震荡</span><small>信心：中</small></h4>
-<p><strong>分析判断</strong> Drewry显示上海至鹿特丹和热那亚分别周涨6%和7%，但苏伊士复航增加有效运力，且官方明确认为新FAK能否落地仍不确定。</p>
-<p><strong>变化条件</strong> 苏伊士复航节奏、空班数量、欧洲需求和FAK实际成交。</p>
-<p><strong>操作建议</strong> 短期滚动比价，避免把公告FAK当成交价；交期敏感货同时核对到港拥堵。</p>
-<details><summary>已核验事实与来源</summary><ul><li><a href="https://www.drewry.co.uk/supply-chain-advisors/supply-chain-expertise/world-container-index-assessed-by-drewry">Drewry WCI</a> · 数据/发布日期 2026-10-15：上海至鹿特丹周涨6%至3522美元/40英尺箱，上海至热那亚周涨7%至3945美元。</li><li><a href="https://www.worldports.org/suez-return-gathers-pace-as-north-european-ports-warn-of-vessel-bunching/">World Ports Organization</a> · 数据/发布日期 2026-10-20：更多班轮服务恢复苏伊士，缩短航程并增加有效运力，但北欧港口警惕叠加到港。</li></ul></details></div>
-<div class="outlook-analysis"><h4>欧洲 <span class="outlook-badge">震荡</span><small>信心：中</small></h4>
-<p><strong>分析判断</strong> 短期指数反弹与复航增供并存。</p>
-<p><strong>变化条件</strong> FAK落地、空班与复航。</p>
-<p><strong>操作建议</strong> 滚动比价并确认船期。</p>
-<details><summary>已核验事实与来源</summary><ul><li><a href="https://www.drewry.co.uk/supply-chain-advisors/supply-chain-expertise/world-container-index-assessed-by-drewry">Drewry WCI</a> · 数据/发布日期 2026-10-15：上海至鹿特丹周涨6%。</li></ul></details></div>
-<div class="outlook-analysis"><h4>地中海 <span class="outlook-badge">震荡</span><small>信心：中</small></h4>
-<p><strong>分析判断</strong> 上海至热那亚反弹，但苏伊士运力回归压制持续涨价。</p>
-<p><strong>变化条件</strong> 红海安全与复航兑现。</p>
-<p><strong>操作建议</strong> 逐港比价。</p>
-<details><summary>已核验事实与来源</summary><ul><li><a href="https://www.drewry.co.uk/supply-chain-advisors/supply-chain-expertise/world-container-index-assessed-by-drewry">Drewry WCI</a> · 数据/发布日期 2026-10-15：上海至热那亚周涨7%。</li></ul></details></div>
-<div class="outlook-analysis"><h4>土耳其 <span class="outlook-badge">信息不足</span><small>信心：不评级</small></h4>
-<p><strong>分析判断</strong> 缺少直接报价。</p>
-<p><strong>变化条件</strong> 取得近期成交。</p>
-<p><strong>操作建议</strong> 单列核价。</p>
-</div>
-<div class="outlook-analysis"><h4>摩洛哥 <span class="outlook-badge">信息不足</span><small>信心：不评级</small></h4>
-<p><strong>分析判断</strong> 港口设备升级不等于中国出口即期价变化。</p>
-<p><strong>变化条件</strong> 取得近期成交。</p>
-<p><strong>操作建议</strong> 单列核价。</p>
-</div><p class="outlook-region"><strong>起运区域差异</strong> 公开指标为上海样本，不能直接套用华南、华北或长江；内陆段单列。</p></article>
-<article class="outlook-card"><h3>拉美</h3><div class="outlook-analysis"><h4>总体 <span class="outlook-badge">信息不足</span><small>信心：不评级</small></h4>
-<p><strong>分析判断</strong> 本次没有取得南美西、南美东或墨西哥同期中国出口成交与直接运力证据。</p>
-<p><strong>变化条件</strong> 三类目的地近期成交、空班和港口等待变化。</p>
-<p><strong>操作建议</strong> 南美西、南美东和墨西哥分别询价，不套用美线。</p>
-</div>
-<div class="outlook-analysis"><h4>南美西 <span class="outlook-badge">信息不足</span><small>信心：不评级</small></h4>
-<p><strong>分析判断</strong> 缺少直接价格。</p>
-<p><strong>变化条件</strong> 取得成交。</p>
-<p><strong>操作建议</strong> 逐票核价。</p>
-</div>
-<div class="outlook-analysis"><h4>南美东 <span class="outlook-badge">信息不足</span><small>信心：不评级</small></h4>
-<p><strong>分析判断</strong> 缺少直接价格。</p>
-<p><strong>变化条件</strong> 取得成交。</p>
-<p><strong>操作建议</strong> 逐票核价。</p>
-</div>
-<div class="outlook-analysis"><h4>墨西哥 <span class="outlook-badge">信息不足</span><small>信心：不评级</small></h4>
-<p><strong>分析判断</strong> 按业务归拉美，缺少直接价格。</p>
-<p><strong>变化条件</strong> 取得成交。</p>
-<p><strong>操作建议</strong> 不套用美国线。</p>
-</div><p class="outlook-region"><strong>起运区域差异</strong> 没有四大起运区域可比数据。</p></article>
-<article class="outlook-card"><h3>北美</h3><div class="outlook-analysis"><h4>总体 <span class="outlook-badge">分化</span><small>信心：中</small></h4>
-<p><strong>分析判断</strong> Drewry显示上海至洛杉矶周涨3%，上海至纽约周跌1%；Freightos则显示美西大致持平、美东小涨，两个指数均指向两岸不同步。</p>
-<p><strong>变化条件</strong> 美国进口需求、空班、亚洲积压清理和燃油附加费。</p>
-<p><strong>操作建议</strong> 美西美东分开询价，保持短有效期并核对内陆段。</p>
-<details><summary>已核验事实与来源</summary><ul><li><a href="https://www.drewry.co.uk/supply-chain-advisors/supply-chain-expertise/world-container-index-assessed-by-drewry">Drewry WCI</a> · 数据/发布日期 2026-10-15：上海至洛杉矶周涨3%至7884美元，上海至纽约周跌1%至10075美元。</li><li><a href="https://www.freightwaves.com/news/how-new-capacity-is-raising-rates-in-chaotic-ocean-market">Freightos经FreightWaves</a> · 数据/发布日期 2026-10-20：亚洲至美西约8126美元/FEU大致持平，美东周涨1%至9700美元。</li></ul></details></div>
-<div class="outlook-analysis"><h4>美西 <span class="outlook-badge">偏涨</span><small>信心：低</small></h4>
-<p><strong>分析判断</strong> Drewry周涨3%，Freightos大致持平，方向有分歧。</p>
-<p><strong>变化条件</strong> 节后积压、舱位和空班。</p>
-<p><strong>操作建议</strong> 交期敏感货先锁舱并持续比价。</p>
-<details><summary>已核验事实与来源</summary><ul><li><a href="https://www.drewry.co.uk/supply-chain-advisors/supply-chain-expertise/world-container-index-assessed-by-drewry">Drewry WCI</a> · 数据/发布日期 2026-10-15：上海至洛杉矶周涨3%。</li></ul></details></div>
-<div class="outlook-analysis"><h4>美东 <span class="outlook-badge">震荡</span><small>信心：低</small></h4>
-<p><strong>分析判断</strong> Drewry小跌而Freightos小涨，证据相反。</p>
-<p><strong>变化条件</strong> 需求与附加费。</p>
-<p><strong>操作建议</strong> 逐票核对全程费用。</p>
-<details><summary>已核验事实与来源</summary><ul><li><a href="https://www.freightwaves.com/news/how-new-capacity-is-raising-rates-in-chaotic-ocean-market">Freightos经FreightWaves</a> · 数据/发布日期 2026-10-20：亚洲至美东周涨1%至9700美元/FEU。</li></ul></details></div>
-<div class="outlook-analysis"><h4>加拿大 <span class="outlook-badge">信息不足</span><small>信心：不评级</small></h4>
-<p><strong>分析判断</strong> 缺少加拿大直接报价。</p>
-<p><strong>变化条件</strong> 取得港口和成交数据。</p>
-<p><strong>操作建议</strong> 不套用美国线。</p>
-</div><p class="outlook-region"><strong>起运区域差异</strong> 直接价格主要为上海或亚洲样本；华南、华北和长江无同口径可比数据。</p></article></div></section></section>
+  <header><h1>航运资讯面板</h1><p>生成时间：2026-10-22 10:00:00 +08:00 · 收录范围：2026-10-21 10:00:00 +08:00 至 2026-10-22 10:00:00 +08:00</p></header>
+  <section class="overview"><h2>今日航运资讯小结</h2><div class="overview-row"><strong>重大航运相关地缘时事</strong><span>霍尔木兹及波斯湾再有两艘油轮遭不明弹体击中，IMO截至10月21日确认中东海域119起事件和24名海员死亡；美国同时把制裁扩大到伊朗影子船队的法律、代理和船舶网络。黑海方面，北约增派巡逻机、无人机和雷达，并协助调查商船袭击。</span></div>
+<div class="overview-row"><strong>运价和市场</strong><span>Freightos显示亚欧、亚地即期价分别周涨6%和3%，美西持平、美东小涨；Drewry最新官方一期仍为10月15日，综合WCI周涨3%至4485美元/40英尺箱。油运端则出现高货流、高成本并存，波斯湾至亚洲原油运费超过每桶37美元。</span></div>
+<div class="overview-row"><strong>船公司动态</strong><span>伊拉克国家航运公司时隔约半个世纪恢复杰贝阿里—乌姆盖斯尔定期箱运；苏伊士复航进一步扩大，远东—欧洲已有63%的部署运力所在服务使用红海航路。电子提单使用率超过五成，但跨平台互操作和银行参与成为新瓶颈。</span></div>
+<div class="overview-row"><strong>港口物流</strong><span>巴拿马运河年度吨位创纪录并恢复Panamax临时预约，德班两个集装箱码头持续长时间延误；拉文纳提高试行吃水，斯德哥尔摩Norvik新增散货装船设施，美国Coos Bay获得铁路升级资金。新加坡则发布霾害期间港航户外作业指引。</span></div>
+<div class="overview-row"><strong>政策法规</strong><span>美国财政部制裁协助伊朗商品运输的律所、船代和九艘船；美国陆军工程兵团推进全国疏浚合同集中管理。上海—墨尔本绿色航运走廊进入实施阶段，韩国推进巨济岛永久自主航运测试区，广州完成广东首例汽车滚装船绿色甲醇加注。</span></div>
+<div class="overview-row"><strong>对航运的综合影响</strong><span>当日航运呈现“风险外溢、能源物流昂贵、箱运有效运力恢复”的并行格局：霍尔木兹与黑海继续推高战争险、船员和应急响应成本，苏伊士回流又增加亚欧有效供给。港口拥堵、燃油供应和天气健康要求会局部抵消航程缩短收益；货主应按航线拆分判断，缩短报价有效期，并逐票核对通航、附加费、舱位、中转和内陆衔接。</span></div><section class="market-outlook"><h2>未来 1–2 周市场与航线运价预判</h2>
+<p class="meta">判断日期：2026-10-22 · 预判区间：2026-10-22 至 2026-11-05 · <a href="#news">查看新闻 ↓</a></p>
+<p class="outlook-market-summary">未来1至2周中国出口集装箱即期市场预计继续分化：欧地线短期反弹但受苏伊士增供压制，北美两岸保持高位且美东略强；其他航线缺少直接成交证据，按价格数据不足或信息不足处理。第二周判断确定性低于第一周。</p>
+<p class="meta">中国出口集装箱即期海运市场 · 方向为分析判断，非具体报价；更新按来源发布日期识别。</p>
+<h3 class="outlook-heading">今日有更新 · 0 条航线</h3>
+<p class="meta">今日暂无新增航线证据。</p>
+<details class="outlook-older"><summary>暂无更新 · 8 条航线</summary><div class="outlook-list"><details class="outlook-card"><summary class="outlook-line"><span class="outlook-name">中东红海</span><span class="outlook-badge">价格数据不足</span><span class="outlook-signal">霍尔木兹袭击继续外溢，苏伊士复航比例又上升，安全成本和有效运力信号相反；本次未取得中国出口直接成交价。</span><small>证据：2026-10-21</small></summary><div class="outlook-analysis"><p><strong>背景影响与价格证据缺口</strong> 霍尔木兹袭击继续外溢，苏伊士复航比例又上升，安全成本和有效运力信号相反；本次未取得中国出口直接成交价。</p><p><strong>变化条件</strong> 霍尔木兹新袭击、战争险、红海通航与承运人绕航决定。</p><p><strong>操作建议</strong> 逐票确认可接货港、中转、保险和报价有效期，交期敏感货准备替代路由。</p><details><summary>已核验事实与来源</summary><ul><li><a href="https://gcaptain.com/two-more-tankers-struck-as-maritime-attacks-spread-across-persian-gulf/">UKMTO经gCaptain</a> · 数据/发布日期 2026-10-21：霍尔木兹附近和伊拉克外海两艘油轮遭不明弹体击中。</li><li><a href="https://www.worldports.org/alphaliner-63-of-far-east-europe-capacity-deployed-on-services-using-red-sea-route/">Alphaliner经World Ports Organization</a> · 数据/发布日期 2026-10-21：远东—欧洲63%的部署运力所在服务已使用红海航路，但部分仍单向通行。</li></ul></details></div><p class="outlook-region"><strong>起运区域差异</strong> 未取得华南、华北、华东和长江的同口径成交，内陆段另计。</p></details><div class="outlook-card outlook-line"><span class="outlook-name">印巴</span><span class="outlook-badge">信息不足</span><span class="outlook-signal">本次没有取得中国出口至印度或巴基斯坦的近期成交、对应航线即期指数或独立运力更新。</span><small>证据：无可用证据</small></div><details class="outlook-card"><summary class="outlook-line"><span class="outlook-name">东南亚和东北亚</span><span class="outlook-badge">价格数据不足</span><span class="outlook-signal">东亚港口等待时间改善但强劲出口需求仍施压，且新加坡、巴生港燃油供应紧张；这些运营背景不足以证明近洋即期价方向。</span><small>证据：2026-10-21</small></summary><div class="outlook-analysis"><p><strong>背景影响与价格证据缺口</strong> 东亚港口等待时间改善但强劲出口需求仍施压，且新加坡、巴生港燃油供应紧张；这些运营背景不足以证明近洋即期价方向。</p><p><strong>变化条件</strong> 东亚港口等待、燃油交付期、台风和近期成交。</p><p><strong>操作建议</strong> 按目的港逐票核价，时间敏感货提前确认加油和中转。</p><details><summary>已核验事实与来源</summary><ul><li><a href="https://container-news.com/maersk-reports-further-east-asia-network-recovery/">Maersk经Container News</a> · 数据/发布日期 2026-10-21：东中国港口等待下降，但亚洲出口需求仍对港口形成压力。</li><li><a href="https://maritimegazette.co.uk/article/report-warns-of-tight-bunker-supplies-in-singapore-and-port-klang-14190111">Maritime Gazette</a> · 数据/发布日期 2026-10-21：新加坡VLSFO建议提前12至15天预订，巴生港即期VLSFO与LSMGO紧张。</li></ul></details></div><p class="outlook-region"><strong>起运区域差异</strong> 公开证据未提供中国四大起运区域的同口径价格。</p></details><details class="outlook-card"><summary class="outlook-line"><span class="outlook-name">澳洲和新西兰</span><span class="outlook-badge">价格数据不足</span><span class="outlook-signal">上海—墨尔本绿色航运走廊进入实施阶段，但这是长期燃料与基础设施计划，不是即期成交证据。</span><small>证据：2026-10-21</small></summary><div class="outlook-analysis"><p><strong>背景影响与价格证据缺口</strong> 上海—墨尔本绿色航运走廊进入实施阶段，但这是长期燃料与基础设施计划，不是即期成交证据。</p><p><strong>变化条件</strong> 澳新分航线成交、班次、设备与燃油附加费。</p><p><strong>操作建议</strong> 澳洲与新西兰分别询价，不把长期绿色项目当短期涨跌信号。</p><details><summary>已核验事实与来源</summary><ul><li><a href="https://splash247.com/ports-set-roadmap-for-greener-australia-china-container-trade/">Port of Melbourne等经Splash247</a> · 数据/发布日期 2026-10-21：上海与墨尔本发布绿色航运走廊实施计划，目标2035年前部署低碳燃料箱船。</li></ul></details></div><p class="outlook-region"><strong>起运区域差异</strong> 没有四大起运区域可比价格。</p></details><details class="outlook-card"><summary class="outlook-line"><span class="outlook-name">非洲</span><span class="outlook-badge">价格数据不足</span><span class="outlook-signal">德班码头延误迫使承运人拆分或调整挂靠，但未取得中国出口至非洲的直接成交或航线指数。</span><small>证据：2026-10-21</small></summary><div class="outlook-analysis"><p><strong>背景影响与价格证据缺口</strong> 德班码头延误迫使承运人拆分或调整挂靠，但未取得中国出口至非洲的直接成交或航线指数。</p><p><strong>变化条件</strong> 德班设备恢复、堆场清理、到港等待与承运人附加费。</p><p><strong>操作建议</strong> 南非货预留船期缓冲，东非、西非继续分区询价。</p><details><summary>已核验事实与来源</summary><ul><li><a href="https://www.worldports.org/durban-port-south-africa-congestion-forces-carriers-to-adjust-vessel-operations/">World Ports Organization</a> · 数据/发布日期 2026-10-21：德班Pier 1和Pier 2持续长时间等待，部分班轮拆分卸装或调整轮转。</li></ul></details></div><p class="outlook-region"><strong>起运区域差异</strong> 没有中国四大起运区域同口径数据。</p></details><details class="outlook-card"><summary class="outlook-line"><span class="outlook-name">欧洲和地中海</span><span class="outlook-badge">震荡</span><span class="outlook-signal">Freightos显示亚欧和亚地周涨6%与3%，但远东—欧洲63%的部署运力所在服务已使用红海航路，新增有效运力限制持续上涨。</span><small>证据：2026-10-21</small></summary><div class="outlook-analysis"><p>信心：中</p><p><strong>分析判断</strong> Freightos显示亚欧和亚地周涨6%与3%，但远东—欧洲63%的部署运力所在服务已使用红海航路，新增有效运力限制持续上涨。</p><p><strong>变化条件</strong> 苏伊士实际通行、FAK落地、空班和欧洲需求。</p><p><strong>操作建议</strong> 短期滚动比价，避免把公告价当成交价；同时确认到港拥堵。</p><details><summary>已核验事实与来源</summary><ul><li><a href="https://container-news.com/freightos-weekly-update-red-sea-container-traffic-set-for-full-return-in-q1/">Freightos经Container News</a> · 数据/发布日期 2026-10-21：亚欧周涨6%至3442美元/FEU，亚地周涨3%至3927美元/FEU。</li><li><a href="https://www.worldports.org/alphaliner-63-of-far-east-europe-capacity-deployed-on-services-using-red-sea-route/">Alphaliner经World Ports Organization</a> · 数据/发布日期 2026-10-21：远东—欧洲63%的部署运力所在服务已使用红海航路。</li></ul></details></div><details class="outlook-segment"><summary class="outlook-line"><span class="outlook-name">欧洲</span><span class="outlook-badge">震荡</span><span class="outlook-signal">即期指数反弹与苏伊士增供并存。</span><small>证据：2026-10-21</small></summary><div class="outlook-analysis"><p>信心：中</p><p><strong>分析判断</strong> 即期指数反弹与苏伊士增供并存。</p><p><strong>变化条件</strong> FAK落地、空班与复航。</p><p><strong>操作建议</strong> 滚动比价。</p><details><summary>已核验事实与来源</summary><ul><li><a href="https://container-news.com/freightos-weekly-update-red-sea-container-traffic-set-for-full-return-in-q1/">Freightos经Container News</a> · 数据/发布日期 2026-10-21：亚欧周涨6%。</li></ul></details></div></details><details class="outlook-segment"><summary class="outlook-line"><span class="outlook-name">地中海</span><span class="outlook-badge">震荡</span><span class="outlook-signal">指数小涨但有效运力回归。</span><small>证据：2026-10-21</small></summary><div class="outlook-analysis"><p>信心：中</p><p><strong>分析判断</strong> 指数小涨但有效运力回归。</p><p><strong>变化条件</strong> 红海安全与复航。</p><p><strong>操作建议</strong> 逐港比价。</p><details><summary>已核验事实与来源</summary><ul><li><a href="https://container-news.com/freightos-weekly-update-red-sea-container-traffic-set-for-full-return-in-q1/">Freightos经Container News</a> · 数据/发布日期 2026-10-21：亚地周涨3%。</li></ul></details></div></details><p class="outlook-region"><strong>起运区域差异</strong> 指标为亚洲总体或上海样本，不能直接套用华南、华北和长江。</p></details><div class="outlook-card outlook-line"><span class="outlook-name">拉美</span><span class="outlook-badge">信息不足</span><span class="outlook-signal">本次未取得南美西、南美东或墨西哥的同期中国出口成交与直接运力证据。</span><small>证据：无可用证据</small></div><details class="outlook-card"><summary class="outlook-line"><span class="outlook-name">北美</span><span class="outlook-badge">分化</span><span class="outlook-signal">Freightos显示美西约8126美元/FEU大致持平，美东周涨1%至9700美元/FEU；Drewry上一期则显示上海至洛杉矶上涨、纽约小跌，两岸不同步。</span><small>证据：2026-10-21</small></summary><div class="outlook-analysis"><p>信心：中</p><p><strong>分析判断</strong> Freightos显示美西约8126美元/FEU大致持平，美东周涨1%至9700美元/FEU；Drewry上一期则显示上海至洛杉矶上涨、纽约小跌，两岸不同步。</p><p><strong>变化条件</strong> 美国进口需求、空班、东亚积压清理和燃油附加费。</p><p><strong>操作建议</strong> 美西美东分开询价，保持短有效期并核对内陆段。</p><details><summary>已核验事实与来源</summary><ul><li><a href="https://container-news.com/freightos-weekly-update-red-sea-container-traffic-set-for-full-return-in-q1/">Freightos经Container News</a> · 数据/发布日期 2026-10-21：亚洲至美西约8126美元/FEU持平，美东周涨1%至9700美元/FEU。</li><li><a href="https://www.drewry.co.uk/supply-chain-advisors/supply-chain-expertise/world-container-index-assessed-by-drewry">Drewry WCI</a> · 数据/发布日期 2026-10-15：上海至洛杉矶周涨3%，上海至纽约周跌1%。</li></ul></details></div><details class="outlook-segment"><summary class="outlook-line"><span class="outlook-name">美西</span><span class="outlook-badge">震荡</span><span class="outlook-signal">Freightos持平而Drewry上涨，信号不完全一致。</span><small>证据：2026-10-21</small></summary><div class="outlook-analysis"><p>信心：低</p><p><strong>分析判断</strong> Freightos持平而Drewry上涨，信号不完全一致。</p><p><strong>变化条件</strong> 空班与需求。</p><p><strong>操作建议</strong> 持续比价。</p><details><summary>已核验事实与来源</summary><ul><li><a href="https://container-news.com/freightos-weekly-update-red-sea-container-traffic-set-for-full-return-in-q1/">Freightos经Container News</a> · 数据/发布日期 2026-10-21：亚洲至美西约8126美元/FEU持平。</li></ul></details></div></details><details class="outlook-segment"><summary class="outlook-line"><span class="outlook-name">美东</span><span class="outlook-badge">震荡</span><span class="outlook-signal">Freightos小涨而Drewry上一期小跌。</span><small>证据：2026-10-21</small></summary><div class="outlook-analysis"><p>信心：低</p><p><strong>分析判断</strong> Freightos小涨而Drewry上一期小跌。</p><p><strong>变化条件</strong> 需求与附加费。</p><p><strong>操作建议</strong> 逐票核价。</p><details><summary>已核验事实与来源</summary><ul><li><a href="https://container-news.com/freightos-weekly-update-red-sea-container-traffic-set-for-full-return-in-q1/">Freightos经Container News</a> · 数据/发布日期 2026-10-21：亚洲至美东周涨1%。</li></ul></details></div></details><p class="outlook-region"><strong>起运区域差异</strong> 价格为亚洲总体或上海样本，缺少华南、华北和长江可比数据。</p></details></div></details>
+</section></section>
   <section class="market-index">
     <div class="index-heading"><div><h2>Drewry World Container Index</h2><p>周度 · 数据日期 2026-10-15</p></div><a href="https://www.drewry.co.uk/supply-chain-advisors/supply-chain-expertise/world-container-index-assessed-by-drewry">查看 Drewry 原始页面</a></div>
     <div class="index-grid"><div class="index-value"><span>综合指数</span><strong>$4,485</strong><small>美元/40英尺箱</small><em class="up">环比 +3%</em></div><div class="routes"><div class="route-row"><div class="route-label"><span>上海—纽约</span><strong>$10,075</strong><em class="down">-1%</em></div><div class="bar-track"><span style="width:100%"></span></div></div>
 <div class="route-row"><div class="route-label"><span>上海—洛杉矶</span><strong>$7,884</strong><em class="up">+3%</em></div><div class="bar-track"><span style="width:78%"></span></div></div>
 <div class="route-row"><div class="route-label"><span>上海—热那亚</span><strong>$3,945</strong><em class="up">+7%</em></div><div class="bar-track"><span style="width:39%"></span></div></div>
 <div class="route-row"><div class="route-label"><span>上海—鹿特丹</span><strong>$3,522</strong><em class="up">+6%</em></div><div class="bar-track"><span style="width:35%"></span></div></div></div></div>
-    <p class="index-note">2026-10-21再次读取Drewry官方公开页面，最新详细评估日期为2026-10-15。综合指数周涨3%；四条上海航线数值均来自官方可读正文，未复制或嵌入原图。</p>
+    <p class="index-note">2026-10-22再次读取Drewry官方公开页面，最新详细评估仍为2026-10-15。沿用该期综合指数及四条上海航线公开数值，保留原数据日期，未把旧值写成当日新值，也未复制或嵌入原图。</p>
   </section>
-  <h2 class="section-title">新闻动态 · 25 条</h2>
+  <h2 id="news" class="section-title">新闻动态 · 25 条</h2>
   <article class="news-card">
-  <div class="news-top"><span class="number">1</span><span class="category">重大航运相关地缘时事</span><span class="verification">阅读全文核对6次袭击、7名失踪海员、每日损失和粮食走廊比例；为欧盟官方声明。</span></div>
-  <h2><a href="https://www.eeas.europa.eu/eeas/statement-hrvp-escalation-russian-strikes-eu-particularly-black-sea-shipping-threatening-human-life_en">黑海十天六次袭击威胁粮食航运</a></h2>
-  <div class="meta">欧盟对外行动署 · 2026-10-20（页面未标注时刻）</div>
-  <p class="summary">欧盟高级代表称，黑海10天内发生6次疑似俄方无人机袭击，罗马尼亚战机击落两架无人机；两艘油轮遇袭后仍有7名海员失踪。欧盟估计乌克兰每日损失约6000万欧元出口收入，并称约90%的乌克兰粮食出口依赖黑海走廊。</p>
-  <div class="impact"><strong>航运影响</strong> 黑海船舶、港口及替代陆路同时受压，将推高谷物航运保险、等待和合规成本，并增加粮价波动。</div>
+  <div class="news-top"><span class="number">1</span><span class="category">重大航运相关地缘时事</span><span class="verification">Exa阅读全文；以UKMTO通报为核心，未采信未证实的水雷归因。</span></div>
+  <h2><a href="https://gcaptain.com/two-more-tankers-struck-as-maritime-attacks-spread-across-persian-gulf/">波斯湾两艘油轮遭不明弹体击中</a></h2>
+  <div class="meta">gCaptain；UKMTO · 2026-10-21 23:12 +08:00</div>
+  <p class="summary">UKMTO通报，一艘油轮10月21日在阿曼Bukha以西约11海里处遇袭并起火，火势已扑灭；另一艘油轮10月20日在伊拉克Al Faw东南约30海里处遭不明弹体击中。两船船员均安全，未报告污染，袭击方和船名尚未确认。</p>
+  <div class="impact"><strong>航运影响</strong> 风险已从海峡主航道向更广波斯湾扩散，可能进一步推高战争险、锚地停留风险和油轮调度成本。</div>
 </article>
 <article class="news-card">
-  <div class="news-top"><span class="number">2</span><span class="category">重大航运相关地缘时事</span><span class="verification">阅读全文核对23起、5起机舱受损、两艘沉没及Kpler流量；同时以德国海军航运中心报告的新增13起袭击交叉核验态势。</span></div>
-  <h2><a href="https://www.worldports.org/iran-strikes-more-ship-engine-rooms-in-ramp-up-of-hormuz-attacks/">霍尔木兹袭击转向船舶机舱</a></h2>
-  <div class="meta">Bloomberg经World Ports Organization · 2026-10-20 22:19 +08:00</div>
-  <p class="summary">10月上半月霍尔木兹及周边至少记录23起船舶袭击，其中至少5起波及机舱；9月未记录同类机舱损伤。Kpler初步数据称中东七日平均石油出口略高于战前，但至少两艘近期遇袭船已沉没。</p>
-  <div class="impact"><strong>航运影响</strong> 机舱受损会延长停航维修并压缩可用油轮和商船吨位，推高运价、保险与船员风险。</div>
+  <div class="news-top"><span class="number">2</span><span class="category">重大航运相关地缘时事</span><span class="verification">Exa阅读全文；The Guardian、Stars and Stripes等独立来源交叉核验部署内容，保留未归因状态。</span></div>
+  <h2><a href="https://splash247.com/nato-boosts-black-sea-surveillance-amid-attacks-on-shipping/">北约增派黑海监视与调查力量</a></h2>
+  <div class="meta">Splash247；The Guardian · 2026-10-21 16:19 +08:00</div>
+  <p class="summary">北约宣布向黑海增加海上巡逻机、无人机、雷达、情报和爆炸物调查人员，以提升商船袭击后的态势感知。保加利亚确认美军P-8巡逻机已开始侦察，但北约尚未公开把相关袭击归因于俄罗斯。</p>
+  <div class="impact"><strong>航运影响</strong> 加强监视有助于识别威胁和调查证据，但不会立即消除黑海粮运航线的战争险与船员风险。</div>
 </article>
 <article class="news-card">
-  <div class="news-top"><span class="number">3</span><span class="category">重大航运相关地缘时事</span><span class="verification">阅读全文核对绕航船数、服务恢复比例与75.3万TEU；港口拥堵为风险预警而非已经发生的全面堵塞。</span></div>
-  <h2><a href="https://www.worldports.org/suez-return-gathers-pace-as-north-european-ports-warn-of-vessel-bunching/">苏伊士复航引发北欧叠加到港预警</a></h2>
-  <div class="meta">Linerlytica、BIMCO经World Ports Organization · 2026-10-20 21:18 +08:00</div>
-  <p class="summary">Linerlytica称绕好望角的箱船降至180艘，为2024年1月以来最低；其监测服务中已有30/52条西行、32/57条东行恢复苏伊士。BIMCO称10月前两周苏伊士周均箱船运力为75.3万TEU，超过危机前水平的一半。</p>
-  <div class="impact"><strong>航运影响</strong> 短航程释放有效运力，但苏伊士船与绕航船叠加抵港，可能阶段性加重鹿特丹和安特卫普码头及内陆网络压力。</div>
+  <div class="news-top"><span class="number">3</span><span class="category">重大航运相关地缘时事</span><span class="verification">Exa全文读取IMO官方实时清单；数值和个案均来自公开表格。</span></div>
+  <h2><a href="https://www.imo.org/en/mediacentre/hottopics/pages/middle-east-highlighted-incidents.aspx">IMO确认中东商船事件增至一百一十九起</a></h2>
+  <div class="meta">International Maritime Organization · 2026-10-21（页面更新）</div>
+  <p class="summary">IMO公开清单截至10月21日记录119起经确认事件和24名海员死亡，并新增Al Dasma于10月20日在霍尔木兹第二次遇袭受损。清单同时显示10月18日Khor Fakkan附近一艘船受损并有一名海员受伤。</p>
+  <div class="impact"><strong>航运影响</strong> 官方统计持续上升将强化船东风险评估、保安措施、船员补偿和绕航需求。</div>
 </article>
 <article class="news-card">
-  <div class="news-top"><span class="number">4</span><span class="category">重大航运相关地缘时事</span><span class="verification">阅读全文区分法案关税上限与行政令当前豁免；Steptoe周报交叉核对豁免范围。</span></div>
-  <h2><a href="https://www.spglobal.com/energy/en/news-research/latest-news/crude-oil/101926-trump-waives-russia-oil-sanctions-to-preserve-ukraine-peace-talks">美国暂缓俄罗斯能源买家关税</a></h2>
-  <div class="meta">S&amp;P Global；Steptoe · 2026-10-19 19:05 +08:00（补充窗口）</div>
-  <p class="summary">特朗普签署行政令实施相关法案框架，但暂时豁免其中几乎全部制裁和关税，包括对俄罗斯能源主要买家最高100%的进口关税。豁免持续至总统或主管部门决定进一步行动；既有对俄制裁不受影响。</p>
-  <div class="impact"><strong>航运影响</strong> 短期降低俄油流向中国、印度等市场突然受阻的风险，但保留的监测和启用机制继续增加油轮租约与合规不确定性。</div>
+  <div class="news-top"><span class="number">4</span><span class="category">重大航运相关地缘时事</span><span class="verification">Exa阅读全文核对官方制裁依据、主体和九艘船；gCaptain作第二来源。</span></div>
+  <h2><a href="https://home.treasury.gov/news/press-releases/sb0664">美国制裁伊朗影子船队服务网络</a></h2>
+  <div class="meta">U.S. Department of the Treasury · 2026-10-22 01:00 +08:00</div>
+  <p class="summary">美国财政部制裁Panama和希腊律所Karnakis and Karnakis、两家船代及相关个人，指其建立壳公司并协助伊朗石油、石化和钢铁运输。七艘货船与两艘支援船被列为冻结财产，措施依据行政令13902实施。</p>
+  <div class="impact"><strong>航运影响</strong> 制裁把合规风险从船舶扩大到律所、船代、加油和港口服务链，承运人与货主需加强受益所有人及代理审查。</div>
 </article>
 <article class="news-card">
-  <div class="news-top"><span class="number">5</span><span class="category">政策法规</span><span class="verification">阅读全文核对收费对象、五类货物、执法方式和意见截止日；明确为提案。</span></div>
-  <h2><a href="https://www.theconveyor.co/p/fmc-spain-vessel-fee-import-limits">美国拟限制西班牙货物和船舶靠港</a></h2>
-  <div class="meta">FMC文件经The Conveyor · 2026-10-20 15:00 +08:00</div>
-  <p class="summary">美国联邦海事委员会拟对每次从海外抵美的西班牙旗船征收20万美元，并限制橄榄油、化妆品、瓷砖、石材及糖果等五类西班牙商品。草案还允许对承运受限货物的任何船舶采取扣留、拒绝进港或禁止离港措施，意见期至12月14日。</p>
-  <div class="impact"><strong>航运影响</strong> 即使规则尚未生效，承运人也可能提前收紧西班牙相关订舱，增加美西航线绕港、甩货和合规审查。</div>
+  <div class="news-top"><span class="number">5</span><span class="category">运价和市场</span><span class="verification">Exa阅读全文；Kpler与Vortexa口径存在差异，摘要明确采用Kpler周度估计并保留不确定性。</span></div>
+  <h2><a href="https://gcaptain.com/middle-east-oil-flows-near-prewar-levels-defy-hormuz-attacks/">海湾原油货流恢复但运输成本高企</a></h2>
+  <div class="meta">gCaptain；Kpler；IEA · 2026-10-22 00:59 +08:00</div>
+  <p class="summary">Kpler估计截至10月18日一周海湾原油与凝析油流量超过2400万桶/日，高于战前水平；经霍尔木兹并计入阿曼湾转运的流量约为1400万桶/日。IEA称中东湾至亚洲原油运输成本已超过每桶37美元，船对船转运、绕行和风险溢价维持高成本。</p>
+  <div class="impact"><strong>航运影响</strong> 高货流并未消除吨位约束，反而通过短驳和转运占用油轮，继续抬高能源到岸与租船成本。</div>
 </article>
 <article class="news-card">
-  <div class="news-top"><span class="number">6</span><span class="category">运价和市场</span><span class="verification">阅读全文核对四条航线数值及苏伊士运力逻辑；未把承运人GRI写成已成交价格。</span></div>
-  <h2><a href="https://www.freightwaves.com/news/how-new-capacity-is-raising-rates-in-chaotic-ocean-market">箱运价反弹与复航增供并存</a></h2>
-  <div class="meta">Freightos经FreightWaves · 2026-10-20 22:58 +08:00</div>
-  <p class="summary">Freightos数据显示亚洲至美西约8126美元/FEU，美东周涨1%至9700美元；亚洲至北欧和地中海分别周涨6%和3%至3442与3927美元。分析同时指出苏伊士回归将释放有效运力，远期供给可能偏宽松。</p>
-  <div class="impact"><strong>航运影响</strong> 短期涨价和空班支撑报价，但复航增供限制持续上行，货主宜按航线滚动比价。</div>
+  <div class="news-top"><span class="number">6</span><span class="category">运价和市场</span><span class="verification">Exa阅读全文核对四条航线数值、涨跌与供需解释。</span></div>
+  <h2><a href="https://container-news.com/freightos-weekly-update-red-sea-container-traffic-set-for-full-return-in-q1/">亚欧运价反弹但复航增供压制后市</a></h2>
+  <div class="meta">Freightos经Container News · 2026-10-21 16:00 +08:00</div>
+  <p class="summary">Freightos数据显示，亚洲至北欧和地中海即期价上周分别上涨6%至3442美元/FEU和3%至3927美元/FEU；美西约8126美元/FEU持平，美东上涨1%至9700美元/FEU。报告认为涨价受GRI和减班支持，但苏伊士复航与欧线需求疲弱使持续性存疑。</p>
+  <div class="impact"><strong>航运影响</strong> 中国出口货主应按欧地与美线分别判断，使用短报价有效期并核对GRI是否真正落地。</div>
 </article>
 <article class="news-card">
-  <div class="news-top"><span class="number">7</span><span class="category">船公司动态</span><span class="verification">阅读全文核对目标时间、艘次与净吨；明确计划仍以红海稳定为前提。</span></div>
-  <h2><a href="https://www.worldports.org/maersk-targets-full-suez-canal-return-by-march-2027/">马士基拟明年三月全面回归苏伊士</a></h2>
-  <div class="meta">苏伊士运河管理局经World Ports Organization · 2026-10-20 18:00 +08:00</div>
-  <p class="summary">苏伊士运河管理局与马士基会谈后称，马士基目标是在2027年3月前让全部航运服务恢复使用苏伊士运河。2026年前九个月马士基船舶经苏伊士276艘次、2330万净吨，高于上年同期146艘次和700万净吨。</p>
-  <div class="impact"><strong>航运影响</strong> 若安全条件允许，全面复航将缩短亚欧航程并释放箱船有效运力，压缩好望角绕航需求。</div>
+  <div class="news-top"><span class="number">7</span><span class="category">运价和市场</span><span class="verification">Exa阅读全文；同时保留看多与看空观点，未把投行预测写成事实。</span></div>
+  <h2><a href="https://splash247.com/shipping-equities-turn-geopolitical-risk-into-an-advantage/">油轮高景气预期与周期风险并存</a></h2>
+  <div class="meta">Splash247 · 2026-10-21 16:27 +08:00</div>
+  <p class="summary">Jefferies把2027年VLCC和LR2收益预期上调至每日6.5万和3.4万美元，理由包括绕航、制裁分割和老龄船队降低运输效率。Norden与Borealis Maritime则警告油轮市场可能接近高点，历史极端收益通常会快速回落。</p>
+  <div class="impact"><strong>航运影响</strong> 船东盈利仍受地缘低效率支撑，但新增订单和风险缓和可能放大后续运价回调。</div>
 </article>
 <article class="news-card">
-  <div class="news-top"><span class="number">8</span><span class="category">船公司动态</span><span class="verification">阅读全文核对六条服务、首航船期及港序；与全面复航战略分开作为具体网络调整。</span></div>
-  <h2><a href="https://container-news.com/maersk-expands-gemini-network-overhaul/">Gemini重组多条亚欧和中东航线</a></h2>
-  <div class="meta">Maersk经Container News · 2026-10-19 20:00 +08:00（补充窗口）</div>
-  <p class="summary">马士基宣布新增AE18，并调整AE2、AE11、AE12、AE19和ME2轮转。AE18将于11月22日从上海首航，新增厦门直靠；ME2增加吉达，AE12增加科伦坡衔接南亚。</p>
-  <div class="impact"><strong>航运影响</strong> 网络重组提高中国至西地中海、北欧、中东和南亚连接性，同时改变上海、南沙、港口塞得等枢纽分工。</div>
+  <div class="news-top"><span class="number">8</span><span class="category">运价和市场</span><span class="verification">Exa全文读取公开周报PDF，区分已成交数据、纸货和传闻。</span></div>
+  <h2><a href="https://www.hellenicshippingnews.com/wp-content/uploads/2026/10/Fearnleys-Weekly-Report-_-Fearnpulse-2.pdf">干散货太平洋航线回升油轮高位回落</a></h2>
+  <div class="meta">Fearnleys经Hellenic Shipping News · 2026-10-21（周报）</div>
+  <p class="summary">Fearnleys第43周报告显示，澳洲至中国C5航线纸货当日上涨8.92%，巴西至中国C3成交与远期询盘也改善；Panamax大西洋仍偏弱。VLCC在前期极端高位后回落100至150个WS点，但报告认为收益仍处高位。</p>
+  <div class="impact"><strong>航运影响</strong> 矿石航线短期受天气与补货支撑，油轮租家议价空间增加，市场波动仍显著。</div>
 </article>
 <article class="news-card">
-  <div class="news-top"><span class="number">9</span><span class="category">船公司动态</span><span class="verification">阅读全文核对船数、容量、金额、船厂、交期和部署航线。</span></div>
-  <h2><a href="https://www.elestrechodigital.com/en/2026/10/20/hmm-orders-eight-13000-teu-container-ships-from-hd-hyundai-for-1-4-billion-dollars">HMM订造八艘双燃料大型箱船</a></h2>
-  <div class="meta">HMM、HD Hyundai经El Estrecho Digital · 2026-10-20 17:41 +08:00</div>
-  <p class="summary">HMM向HD Hyundai订造8艘13000TEU LNG双燃料箱船，合同约1.9196万亿韩元，计划2029年交付并投入远东—印度—地中海服务。公司另购4艘支线船，12艘合计增加约11.41万TEU。</p>
-  <div class="impact"><strong>航运影响</strong> 订单增强HMM亚印地网络和支线覆盖，但也增加2029年后的箱船供给压力。</div>
+  <div class="news-top"><span class="number">9</span><span class="category">船公司动态</span><span class="verification">Exa阅读全文核对服务数、TEU占比和单向通行限制。</span></div>
+  <h2><a href="https://www.worldports.org/alphaliner-63-of-far-east-europe-capacity-deployed-on-services-using-red-sea-route/">远东欧洲六成三运力所在服务恢复红海航路</a></h2>
+  <div class="meta">Alphaliner经World Ports Organization · 2026-10-22 03:42 +08:00</div>
+  <p class="summary">Alphaliner调查十大班轮公司46条远东—欧洲直达服务，发现其中24条在9月15日至10月15日期间出现红海通行。使用红海航路的服务占部署运力63%，其中远东—地中海约70%、远东—北欧约58%，但不少服务仍只在单向通行。</p>
+  <div class="impact"><strong>航运影响</strong> 苏伊士回流缩短航程并释放有效运力，可能压制欧地线中期运价，同时增加港口叠加到港风险。</div>
 </article>
 <article class="news-card">
-  <div class="news-top"><span class="number">10</span><span class="category">船公司动态</span><span class="verification">阅读全文核对20艘、24000TEU、62艘与订单簿比例；金额和交期未披露。</span></div>
-  <h2><a href="https://www.seatrade-maritime.com/containers/msc-and-hmm-send-orderbook-to-new-peak">MSC追加二十艘超大型箱船订单</a></h2>
-  <div class="meta">Linerlytica经Seatrade Maritime · 2026-10-20 17:53 +08:00</div>
-  <p class="summary">Linerlytica称MSC在恒力重工追加20艘24000TEU箱船，使其2万TEU以上订单达到62艘。最新MSC和HMM订单把全球箱船订单簿推至1620万TEU，相当于现有船队46.5%。</p>
-  <div class="impact"><strong>航运影响</strong> 超大型船集中交付将强化主干线规模效应，也加大未来运力过剩和支线中转压力。</div>
+  <div class="news-top"><span class="number">10</span><span class="category">船公司动态</span><span class="verification">Exa阅读全文；Maritime Executive按AIS确认10月21日离开杰贝阿里。</span></div>
+  <h2><a href="https://splash247.com/iraqi-line-returns-to-gulf-container-trade-after-50-years/">伊拉克恢复海湾定期集装箱航运</a></h2>
+  <div class="meta">Splash247；伊拉克交通部 · 2026-10-21 14:41 +08:00</div>
+  <p class="summary">伊拉克国家航运公司部署约902TEU的Basrah，开行杰贝阿里—乌姆盖斯尔八天一班的支线服务，为约半个世纪来首个定期海湾商业航线。2026年前七个月，经约旦亚喀巴转运至伊拉克的集装箱同比增加933%，显示陆桥仍是重要替代。</p>
+  <div class="impact"><strong>航运影响</strong> 新支线可补充伊拉克进口通道，但仍须穿越高风险霍尔木兹，无法取代亚喀巴等陆桥方案。</div>
 </article>
 <article class="news-card">
-  <div class="news-top"><span class="number">11</span><span class="category">船公司动态</span><span class="verification">阅读全文核对船数、车位、船厂、交期和总容量；价格未披露。</span></div>
-  <h2><a href="https://hansa.news/msc-subsidiary-gcc-expands-car-carrier-orders-to-22/">GCC汽车船新造计划增至二十二艘</a></h2>
-  <div class="meta">GCC经Hansa · 2026-10-20 21:48 +08:00</div>
-  <p class="summary">MSC旗下Global Car Carriers在舟山长宏追加2艘8600车位LNG双燃料汽车船，计划2030年交付。其新造计划由18艘8600车位和4艘7000车位组成，总容量18.28万车位。</p>
-  <div class="impact"><strong>航运影响</strong> 大型汽车船订单继续扩张，将增加中国汽车出口可用吨位，但2028至2030年交付后也可能加剧供给竞争。</div>
+  <div class="news-top"><span class="number">11</span><span class="category">船公司动态</span><span class="verification">Exa阅读全文核对190份清理样本和使用比例，未把调查结果外推为全行业覆盖率。</span></div>
+  <h2><a href="https://splash247.com/ebl-use-tops-50-as-interoperability-becomes-next-hurdle/">电子提单使用率超过五成</a></h2>
+  <div class="meta">Splash247；FIT Alliance · 2026-10-21 19:00 +08:00</div>
+  <p class="summary">FIT Alliance 2026年调查显示，51.1%的受访者已全部或部分使用电子提单，高于2024年的49.2%；完全采用比例升至11.2%。跨平台互操作、法律效力与真实性验证成为主要障碍，银行参与率仅22.2%。</p>
+  <div class="impact"><strong>航运影响</strong> 电子单证可缩短放货和融资时间，但平台互通不足仍会造成纸电并行与操作风险。</div>
 </article>
 <article class="news-card">
-  <div class="news-top"><span class="number">12</span><span class="category">船公司动态</span><span class="verification">阅读全文核对合同状态、容量、投资上限、技术配置与交期。</span></div>
-  <h2><a href="https://www.worldports.org/hai-an-approves-feeder-newbuilding-investment/">海安订造两艘低排放支线箱船</a></h2>
-  <div class="meta">Hai An经World Ports Organization · 2026-10-19 21:21 +08:00（补充窗口）</div>
-  <p class="summary">越南海安批准向中国船舶集团订造2艘1928TEU箱船，最高投资7000万美元，计划2029年10月和11月交付。船舶配313个冷藏箱插座，并采用Tier III主机、岸电和选择性催化还原系统。</p>
-  <div class="impact"><strong>航运影响</strong> 新船将更新东南亚支线运力并提高冷藏货承运能力，但短期市场供给不变。</div>
+  <div class="news-top"><span class="number">12</span><span class="category">船公司动态</span><span class="verification">Exa阅读全文核对航次、吨位与箱量，并保留文章对规模限制的说明。</span></div>
+  <h2><a href="https://container-news.com/explainer-nsr-record-shows-a-new-trend/">北极航线季节性箱运服务完成首季运营</a></h2>
+  <div class="meta">Container News · 2026-10-21 13:00 +08:00</div>
+  <p class="summary">北方海航道截至9月底完成104个过境航次，货量约370万吨，同比增15%；原油与散货约占86%。Sea Legend以七艘冰级船完成八个中国—欧洲班次、运输逾1.4万TEU，但总量仍小于一艘超大型箱船单航次规模。</p>
+  <div class="impact"><strong>航运影响</strong> 北极航线形成季节性快线利基市场，但冰况、俄罗斯许可和小型老龄船限制其替代苏伊士的能力。</div>
 </article>
 <article class="news-card">
-  <div class="news-top"><span class="number">13</span><span class="category">船公司动态</span><span class="verification">阅读全文核对交付、车道米、航程和姊妹船维修状态。</span></div>
-  <h2><a href="https://www.worldports.org/smyril-line-takes-delivery-of-second-ro-ro-in-series/">Smyril接收第二艘北大西洋滚装船</a></h2>
-  <div class="meta">Smyril Line经World Ports Organization · 2026-10-19 13:54 +08:00（补充窗口）</div>
-  <p class="summary">Smyril Line从烟台中集来福士接收3300车道米滚装船Akranes，这是两艘系列船中的第二艘。该船预计经六周航程抵达法罗群岛；姊妹船Skipanes仍在香港修复9月机舱火灾损伤。</p>
-  <div class="impact"><strong>航运影响</strong> 新船将补充北大西洋滚装运力，但姊妹船维修延迟仍限制系列船近期可用能力。</div>
+  <div class="news-top"><span class="number">13</span><span class="category">港口物流</span><span class="verification">Exa阅读全文；官方A-39-2026通知交叉核对临时预约恢复。</span></div>
+  <h2><a href="https://gcaptain.com/panama-canal-traffic-and-tonnage-rise-despite-el-nino-challenges/">巴拿马运河年度吨位创纪录</a></h2>
+  <div class="meta">Panama Canal Authority经gCaptain · 2026-10-22 04:35 +08:00</div>
+  <p class="summary">巴拿马运河2026财年完成13951次过境，同比增4.1%；PC/UMS吨位增6.5%至5.21亿吨，超过2022年纪录，收入约66亿美元。运河同时恢复Panamax船闸临时预约服务，但仍警告流域水量赤字可能带来调整。</p>
+  <div class="impact"><strong>航运影响</strong> 预约灵活性和稳定吃水有利于船期，但厄尔尼诺与水量约束仍需纳入跨洋航线备选规划。</div>
 </article>
 <article class="news-card">
-  <div class="news-top"><span class="number">14</span><span class="category">船公司动态</span><span class="verification">阅读全文核对利润、船型、40艘订单和区域运营影响。</span></div>
-  <h2><a href="https://www.gulf-times.com/article/736249/business/nakilat-posts-nine-month-net-profit-of-qr129bn">Nakilat新造船订单维持四十艘</a></h2>
-  <div class="meta">Nakilat经Gulf Times · 2026-10-21 01:41 +08:00</div>
-  <p class="summary">Nakilat公布前九个月净利润12.9亿卡塔尔里亚尔，上年同期为13.1亿；公司已命名首艘88000立方米LPG/氨船，并有40艘新船在中韩船厂建造。公司称地区局势继续影响修船、代理和拖轮业务。</p>
-  <div class="impact"><strong>航运影响</strong> 大规模新造计划支撑卡塔尔能源运输扩张，但区域风险仍影响海事服务收入和运营安排。</div>
+  <div class="news-top"><span class="number">14</span><span class="category">港口物流</span><span class="verification">Exa阅读全文核对码头等待、设备原因和承运人调整。</span></div>
+  <h2><a href="https://www.worldports.org/durban-port-south-africa-congestion-forces-carriers-to-adjust-vessel-operations/">德班拥堵迫使班轮调整挂靠</a></h2>
+  <div class="meta">World Ports Organization · 2026-10-22 00:18 +08:00</div>
+  <p class="summary">德班Pier 2不同服务的泊位延误约3天至一个多月，Pier 1等待约一至两周以上，设备故障、堆场和系统迁移共同造成积压。COSCO等承运人把卸箱与装箱拆分到不同挂靠，部分船改靠多用途码头或调整南非轮转。</p>
+  <div class="impact"><strong>航运影响</strong> 南非进出口面临更长船期、转港和附加费用风险，货主需预留堆存与内陆衔接缓冲。</div>
 </article>
 <article class="news-card">
-  <div class="news-top"><span class="number">15</span><span class="category">船公司动态</span><span class="verification">阅读全文核对三家船东、船数、容量和已披露交期；未猜测金额。</span></div>
-  <h2><a href="https://www.worldports.org/shipowners-expand-orderbooks-at-chinese-yards/">三家船东在中国追加箱船订单</a></h2>
-  <div class="meta">DynaLiners经World Ports Organization · 2026-10-18 17:09 +08:00（补充窗口）</div>
-  <p class="summary">中谷海运向沪东中华订造2艘14000TEU箱船；Tsakos与Elbdeich分别订造2艘3200TEU箱船，后两批预计2028年交付。中谷新船将成为其船队最大船型，合同金额和交付时间未披露。</p>
-  <div class="impact"><strong>航运影响</strong> 多尺寸订单巩固中国船厂箱船份额，并同时增加主干线和支线的中期运力。</div>
+  <div class="news-top"><span class="number">15</span><span class="category">港口物流</span><span class="verification">Exa阅读全文；World Ports Organization交叉核对泊位、操作条件与增载估计。</span></div>
+  <h2><a href="https://splash247.com/ravenna-unlocks-more-cargo-capacity-with-deeper-berths/">拉文纳试行十一米吃水靠泊</a></h2>
+  <div class="meta">Splash247；Port of Ravenna · 2026-10-21 18:31 +08:00</div>
+  <p class="summary">意大利拉文纳港五个商业泊位开始试行接纳吃水11米船舶，较此前上限增加20厘米，并要求白天、适宜潮位和双引航员。港方估计，200米船舶可因此多装约1500吨货物。</p>
+  <div class="impact"><strong>航运影响</strong> 更大吃水可减少单位货量所需航次，但试行限制和航标建设完成前仍需提前申请。</div>
 </article>
 <article class="news-card">
-  <div class="news-top"><span class="number">16</span><span class="category">港口物流</span><span class="verification">阅读全文核对进出口TEU、74%比例和拟议措施；联合行政令仍未签署。</span></div>
-  <h2><a href="https://www.worldports.org/manila-port-congestion-may-take-months-to-clear-boc/">马尼拉空箱失衡或需数月消化</a></h2>
-  <div class="meta">菲律宾海关经World Ports Organization · 2026-10-20 17:06 +08:00</div>
-  <p class="summary">菲律宾海关称，马尼拉国际集装箱港1月至10月18日进口136万TEU、出口约100万TEU，仅相当于进口量74%。当局研究政府堆场、自动化调箱、扫舱船和跨部门联合行政令，后者预计约两周后签署。</p>
-  <div class="impact"><strong>航运影响</strong> 空箱积压将延长堆存和周转，推高菲律宾航线滞箱、设备与内陆配送成本。</div>
+  <div class="news-top"><span class="number">16</span><span class="category">港口物流</span><span class="verification">Exa阅读全文核对拨款、项目规模与航道条件，未把规划写成已投运。</span></div>
+  <h2><a href="https://maritime-executive.com/article/dot-awards-200m-rail-grant-to-support-port-of-coos-bay-s-terminal-project">Coos Bay获两亿美元港口铁路升级资金</a></h2>
+  <div class="meta">The Maritime Executive；U.S. DOT · 2026-10-22 06:39 +08:00</div>
+  <p class="summary">美国运输部向俄勒冈Coos Bay铁路拨款2.05亿美元，支持连接规划中23亿美元集装箱码头与一级铁路网络。拟建码头目标接纳最多约1.3万TEU船舶，但仍需航道加深和拓宽。</p>
+  <div class="impact"><strong>航运影响</strong> 项目若落地将增加美国西岸替代门户和内陆铁路选择，但建设、疏浚与货量兑现仍需多年。</div>
 </article>
 <article class="news-card">
-  <div class="news-top"><span class="number">17</span><span class="category">港口物流</span><span class="verification">阅读全文核对三港、生效日、起运地区和不同箱型费用；公告费用不等于基础海运费上涨。</span></div>
-  <h2><a href="https://container-news.com/cma-cgm-announces-new-congestion-charges-for-tema-freetown-and-monrovia/">CMA CGM上调西非三港拥堵附加费</a></h2>
-  <div class="meta">CMA CGM经Container News · 2026-10-20 17:00 +08:00</div>
-  <p class="summary">CMA CGM宣布11月1日起对特马、弗里敦和蒙罗维亚征收拥堵附加费；美国和巴西起运货从11月15日起适用。远东至特马干箱为200美元/TEU，至弗里敦和蒙罗维亚部分箱型最高700美元/TEU。</p>
-  <div class="impact"><strong>航运影响</strong> 中国至西非报价将直接增加附加费，冷藏和特殊设备货物成本压力更大。</div>
+  <div class="news-top"><span class="number">17</span><span class="category">港口物流</span><span class="verification">Exa阅读全文核对设施用途、靠泊能力和土地再利用。</span></div>
+  <h2><a href="https://www.worldports.org/stockholm-norvik-port-inaugurates-new-port-facility/">斯德哥尔摩Norvik启用散货装船设施</a></h2>
+  <div class="meta">Ports of Stockholm经World Ports Organization · 2026-10-22 04:24 +08:00</div>
+  <p class="summary">Stockholm Norvik港启用由两座桩基栈桥组成的新设施，可让大型散货船装运港区建设产生的碎石。碎石外运将释放土地，用于NCC Industry规划的商业与物流园。</p>
+  <div class="impact"><strong>航运影响</strong> 海运碎石可降低陆路压力并释放港区土地，但短期主要影响波罗的海区域散货物流。</div>
 </article>
 <article class="news-card">
-  <div class="news-top"><span class="number">18</span><span class="category">港口物流</span><span class="verification">阅读全文保留协会口径并明确未独立确认；与承运人拥堵附加费形成相互印证但不混为同一事件。</span></div>
-  <h2><a href="https://channelonenewsonline.com/2026/10/20/over-120-trucks-affected-by-tema-port-disruptions-importers/">特马港作业中断延误逾百辆卡车</a></h2>
-  <div class="meta">IEAG经ChannelOne News · 2026-10-20 13:20 +08:00</div>
-  <p class="summary">加纳进出口商协会称，特马港MPS三号航站楼作业中断影响超过120辆转运集装箱卡车，并伴随账单、付款确认和提箱延误。协会承认部分指控尚未经独立确认，并要求港务局和监管方调查额外费用责任。</p>
-  <div class="impact"><strong>航运影响</strong> 延误可能增加滞箱、堆存和卡车周转成本，并削弱西非进口链稳定性。</div>
+  <div class="news-top"><span class="number">18</span><span class="category">港口物流</span><span class="verification">Exa阅读全文核对船型、加注量、装车量和目的地。</span></div>
+  <h2><a href="https://www.worldports.org/key-auto-shipping-hub-scores-green-milestone/">广州完成汽车船绿色甲醇首次加注</a></h2>
+  <div class="meta">China Daily经World Ports Organization · 2026-10-21 23:51 +08:00</div>
+  <p class="summary">一艘装载逾4000辆新能源汽车、驶往欧洲的滚装船在南沙完成2300吨绿色甲醇加注，为广东首例汽车滚装船绿色甲醇补给。广州港称其已覆盖集装箱船、散货船和汽车滚装船三类绿色甲醇加注场景。</p>
+  <div class="impact"><strong>航运影响</strong> 多船型清洁燃料供应能力有助于中国汽车出口航线降低燃料转换和补给不确定性。</div>
 </article>
 <article class="news-card">
-  <div class="news-top"><span class="number">19</span><span class="category">港口物流</span><span class="verification">阅读全文核对总吨、箱量、空重箱及波斯湾变化；为港口官方数据。</span></div>
-  <h2><a href="https://newsroom.portofantwerpbruges.com/en/press-releases/port-of-antwerp-bruges-sees-strong-recovery-in-container-throughput-in-volatile-trading-environment">安特卫普箱量恢复但空箱占主导</a></h2>
-  <div class="meta">Port of Antwerp-Bruges · 2026-10-20 15:00 +08:00</div>
-  <p class="summary">安特卫普—布鲁日港前九个月吞吐20090万吨，同比降0.8%；箱量按TEU升1.2%，第三季度为2020年末以来最佳。增长主要来自空箱增加11.7%，重箱下降1.3%，对波斯湾箱货出口下降70%。</p>
-  <div class="impact"><strong>航运影响</strong> 进口与出口失衡增加空箱回亚洲需求，苏伊士复航叠加到港可能继续考验码头和内陆网络。</div>
+  <div class="news-top"><span class="number">19</span><span class="category">港口物流</span><span class="verification">Exa阅读全文；内容来自10月20日公开供应报告，未推断未披露价格。</span></div>
+  <h2><a href="https://maritimegazette.co.uk/article/report-warns-of-tight-bunker-supplies-in-singapore-and-port-klang-14190111">新加坡与巴生港船用燃油供应趋紧</a></h2>
+  <div class="meta">Maritime Gazette；ENGINE · 2026-10-21 11:14 +08:00</div>
+  <p class="summary">公开市场报告称，新加坡各主要船燃油品种供应紧张，VLSFO建议提前12至15天预订，HSFO库存可能紧张至11月。巴生港即期VLSFO与LSMGO同样偏紧，临时加油安排面临延误或改港风险。</p>
+  <div class="impact"><strong>航运影响</strong> 亚洲枢纽加油提前期拉长会增加船期缓冲、燃油溢价和备选加油港需求。</div>
 </article>
 <article class="news-card">
-  <div class="news-top"><span class="number">20</span><span class="category">港口物流</span><span class="verification">阅读全文核对设备数量、订单范围、码头规格和能力。</span></div>
-  <h2><a href="https://www.elestrechodigital.com/en/2026/10/20/marsa-maroc-adds-two-new-post-panamax-cranes-to-the-casablanca-container-terminal">卡萨布兰卡东码头新增两台岸桥</a></h2>
-  <div class="meta">Marsa Maroc经El Estrecho Digital · 2026-10-20 21:42 +08:00</div>
-  <p class="summary">Marsa Maroc接收两台ZPMC Post-Panamax岸桥，用于卡萨布兰卡东集装箱码头；设备属于18台岸桥和50台RTG订单。该码头现有600米岸线、4个泊位，名义年能力70万TEU。</p>
-  <div class="impact"><strong>航运影响</strong> 新设备可提升大船装卸与周转能力，并支撑卡萨布兰卡集装箱码头扩能。</div>
+  <div class="news-top"><span class="number">20</span><span class="category">政策法规</span><span class="verification">Exa全文读取官方PDF，核对PM2.5阈值和雇主措施。</span></div>
+  <h2><a href="https://www.mpa.gov.sg/api/media/46b5766d-ef45-4a37-aa3a-8143cb3ab634/pn26-140.pdf">新加坡发布霾害港航户外作业指引</a></h2>
+  <div class="meta">Maritime and Port Authority of Singapore · 2026-10-21（官方通知）</div>
+  <p class="summary">新加坡海事及港务管理局要求海事企业用次日PSI预测安排作业，并按1小时PM2.5读数即时调整。读数达到高或很高等级时，应限制户外劳动、提供口罩或呼吸器，并为受影响工人安排室内休息。</p>
+  <div class="impact"><strong>航运影响</strong> 霾害可能降低码头和船上户外作业效率，企业需把健康防护、能见度和人员轮换纳入计划。</div>
 </article>
 <article class="news-card">
-  <div class="news-top"><span class="number">21</span><span class="category">港口物流</span><span class="verification">阅读全文核对船舶、货量、裂口、码头损伤、无污染和新拖轮要求；事故原因仍在调查。</span></div>
-  <h2><a href="https://maritime-executive.com/article/bulker-holed-in-dock-allision-prompts-new-rules-for-vietnamese-port">越南散货船碰撞触发拖轮新要求</a></h2>
-  <div class="meta">越南地方海事管理部门经The Maritime Executive · 2026-10-20 23:41 +08:00</div>
-  <p class="summary">18.2万载重吨散货船Aquacharm在Dung Quat靠泊时撞击在建码头，船艏出现约5米裂口，码头约50米结构受损；22名船员安全且无污染。当地10月20日要求现场24小时配置合计至少5000马力的全回转拖轮和应急设备。</p>
-  <div class="impact"><strong>航运影响</strong> 事故可能影响矿石卸货与泊位工程，并提高当地靠离泊拖轮和安全合规成本。</div>
+  <div class="news-top"><span class="number">21</span><span class="category">政策法规</span><span class="verification">Exa阅读全文核对合同数量、组织安排和时间表。</span></div>
+  <h2><a href="https://gcaptain.com/army-corps-moves-to-overhaul-how-u-s-dredging-projects-are-awarded/">美国推进全国疏浚合同集中管理</a></h2>
+  <div class="meta">gCaptain；U.S. Army Corps of Engineers · 2026-10-21 05:22 +08:00（72小时补充）</div>
+  <p class="summary">美国陆军工程兵团拟建立Enterprise Dredging Delivery Center，把每年约190项疏浚合同行动从分区独立安排转向全国协调。目标是减少重复管理、动员冲突和有限疏浚船队的低效使用，永久中心计划在2027年建立。</p>
+  <div class="impact"><strong>航运影响</strong> 集中排期可提高航道维护稳定性，但大型合同如何影响中小承包商和地区项目仍需观察。</div>
 </article>
 <article class="news-card">
-  <div class="news-top"><span class="number">22</span><span class="category">港口物流</span><span class="verification">阅读全文核对船型、位置、货物、拖轮和无污染状态；故障原因未明。</span></div>
-  <h2><a href="https://www.worldports.org/tanker-sled-loses-propulsion-off-germany-with-russian-crude/">受损油轮在波罗的海失去推进</a></h2>
-  <div class="meta">Vesseltracker经World Ports Organization · 2026-10-19 17:36 +08:00（补充窗口）</div>
-  <p class="summary">载运俄罗斯原油的50386载重吨油轮Sled于10月18日在德国吕根岛与丹麦默恩岛之间失去推进，随后在丹麦领海外约半海里锚泊。德方派出104吨系柱拉力应急拖轮，暂未报告泄漏、伤亡或环境损害。</p>
-  <div class="impact"><strong>航运影响</strong> 波罗的海狭窄水域中的失去推进事件增加应急拖航、污染防控和俄油运输延误风险。</div>
+  <div class="news-top"><span class="number">22</span><span class="category">政策法规</span><span class="verification">Exa阅读全文；Container News独立交叉核对目标、参与方与实施内容。</span></div>
+  <h2><a href="https://splash247.com/ports-set-roadmap-for-greener-australia-china-container-trade/">上海墨尔本绿色航运走廊进入实施阶段</a></h2>
+  <div class="meta">Splash247；Port of Melbourne · 2026-10-21 08:03 +08:00（72小时补充）</div>
+  <p class="summary">上海港、墨尔本港与C40 Cities发布绿色航运走廊实施计划，涵盖绿色甲醇、生物燃料、岸电和港船数据交换。目标是在2035年前至少部署一艘低碳燃料集装箱船，上海同时提出百万吨级绿色甲醇和生物燃料年加注能力。</p>
+  <div class="impact"><strong>航运影响</strong> 计划为中澳航线长期燃料与船舶投资提供需求信号，但短期不会直接改变即期运价。</div>
 </article>
 <article class="news-card">
-  <div class="news-top"><span class="number">23</span><span class="category">港口物流</span><span class="verification">阅读全文核对回收吨位、比例、移动距离及油膜；三只死鸟死因未确认，未作因果判断。</span></div>
-  <h2><a href="https://vesselhunter.io/news/msc-baltic-iii-wreck-removal-newfoundland-two-thirds-resolve-marine">纽芬兰沉船拆解完成约六成八</a></h2>
-  <div class="meta">加拿大海岸警卫队经Vessel Hunter · 2026-10-19 14:10 +08:00（补充窗口）</div>
-  <p class="summary">MSC Baltic III拆解已回收7445吨钢材，约占船体68%；船艏和中段累计向岸移动170米，船艉移动78米。加拿大海岸警卫队称切割残余油系统时出现油膜，岸线发现含油植被和焦油痕迹。</p>
-  <div class="impact"><strong>航运影响</strong> 冬季前的拆解和污染控制仍将占用救捞资源，并影响当地岸线恢复进度。</div>
+  <div class="news-top"><span class="number">23</span><span class="category">政策法规</span><span class="verification">Exa阅读全文并与第二公开报道核对地点、申请方和技术范围。</span></div>
+  <h2><a href="https://splash247.com/south-korea-moves-to-establish-permanent-autonomous-shipping-test-zone/">韩国推进永久自主航运测试区</a></h2>
+  <div class="meta">Splash247 · 2026-10-21 08:41 +08:00（72小时补充）</div>
+  <p class="summary">韩国庆尚南道申请把巨济岛周边韩山、加祚和七川岛之间海域设为永久自主船舶试验区，预计年底前审批。该区将为三星重工等企业继续测试自动操舵、航线跟踪、避碰和AI态势感知提供稳定监管框架。</p>
+  <div class="impact"><strong>航运影响</strong> 长期测试区可缩短无人船技术从临时豁免走向商业化的周期，但仍需兼顾渔业和现有商船航路。</div>
 </article>
 <article class="news-card">
-  <div class="news-top"><span class="number">24</span><span class="category">政策法规</span><span class="verification">阅读全文核对区域、时间、0.10%上限及塑料颗粒、压载水进展；实施日与生效日分开表述。</span></div>
-  <h2><a href="https://www.infomarine.net/en/global-shipping-news/19-world-maritime-news/74770-imo-adopts-world%E2%80%99s-largest-emission-control-area-and-other-issues-at-mpec.html">IMO通过东北大西洋排放控制区</a></h2>
-  <div class="meta">IMO经Infomarine · 2026-10-19 16:17 +08:00（补充窗口）</div>
-  <p class="summary">IMO海上环境保护委员会通过东北大西洋排放控制区，覆盖英国、法国、西班牙、葡萄牙至冰岛和格陵兰周边海域，2027年9月生效、12个月后实施。区内船用燃油硫含量上限为0.10%，并同步推进塑料颗粒强制规则和压载水修订。</p>
-  <div class="impact"><strong>航运影响</strong> 新区域将提高合规燃油、设备和航次规划要求，并推动欧洲大西洋港口低硫燃料需求。</div>
+  <div class="news-top"><span class="number">24</span><span class="category">港口物流</span><span class="verification">Exa阅读全文；仅表述承运人已公开的网络状态，不外推具体港口等待天数。</span></div>
+  <h2><a href="https://container-news.com/maersk-reports-further-east-asia-network-recovery/">东亚港口等待下降但网络仍未完全恢复</a></h2>
+  <div class="meta">Maersk经Container News · 2026-10-21 23:00 +08:00</div>
+  <p class="summary">马士基称近期台风的直接影响大体消退，东中国港口作业条件与船舶等待时间继续改善。强劲亚洲出口需求仍给港口和船期恢复带来压力，部分航线可能继续出现间歇性延误。</p>
+  <div class="impact"><strong>航运影响</strong> 积压缓解有利于恢复班期和设备周转，但短期订舱仍需预留时间缓冲。</div>
 </article>
 <article class="news-card">
-  <div class="news-top"><span class="number">25</span><span class="category">政策法规</span><span class="verification">阅读全文核对20项成果、22个AI场景、认证体系和合作备忘录；未把论坛发布写成全部已经强制实施。</span></div>
-  <h2><a href="https://www.cnfin.com/hg-lb/detail/20261020/4483806_1.html">上海发布水运数智和绿色转型成果</a></h2>
-  <div class="meta">新华财经 · 2026-10-20 18:12 +08:00</div>
-  <p class="summary">北外滩论坛发布20项成果，包括水运人工智能22个应用场景、内河新能源船行动方案、绿色船用燃料认证体系、中法绿色航运走廊合作及多份绿色燃料合同示范文本。交通运输部与IMO另签署海事能力建设合作备忘录。</p>
-  <div class="impact"><strong>航运影响</strong> 政策与标准将推动港口安全、航运运营、绿色燃料认证和合同管理加快落地，提高相关投资和合规确定性。</div>
+  <div class="news-top"><span class="number">25</span><span class="category">港口物流</span><span class="verification">Exa阅读全文核对两起独立救助行动，未把调查碎片归因于特定国家。</span></div>
+  <h2><a href="https://www.worldports.org/turkish-and-bulgarian-authorities-conduct-black-sea-vessel-recoveries/">黑海受损商船完成拖带与救助</a></h2>
+  <div class="meta">World Ports Organization；土耳其与保加利亚主管机关 · 2026-10-22 01:51 +08:00</div>
+  <p class="summary">土耳其救助力量将因恶劣天气搁浅的10.6万载重吨油轮Banda重新起浮；保加利亚则把无人机袭击后船体多处破损的Chelsea-3拖至Burgas。两项行动均受恶劣海况和船体状态限制，后者的碎片调查仍在进行。</p>
+  <div class="impact"><strong>航运影响</strong> 黑海袭击与恶劣天气叠加增加专业救助、港口接收和残骸调查资源需求。</div>
 </article>
   <footer>标题、摘要与指数图形经过整理，请以所附原始来源为准。</footer>
 </main></body></html>
